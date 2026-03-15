@@ -1,0 +1,428 @@
+<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasig City Science High School - Research</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>RESEARCH</h1>
+            <p>Fruitful efforts of the Pascian community in respective categories, done in the pursuit of knowledge and solutions for a better future.</p>
+        </div>
+
+        <div class="card-container">
+    <div class="card" data-category="RIM">
+        <h3><b>Robotics and Intelligent Machinery (RIM)</h3></b>
+        <p>Studies regarding the components and development of intelligent technology and machinery.</p>
+    </div>
+    <div class="card" data-category="Data Sciences">
+        <h3><b>Data Sciences</h3></b>   
+        <p>Studies regarding the analysis of large datasets and the involvement of mathematical models.</p>
+    </div>
+    <div class="card" data-category="Life Sciences">
+        <h3><b>Life Sciences</h3></b>
+        <p>Studies regarding living organisms and its properties.</p>
+    </div>
+    <div class="card" data-category="Physical Sciences">
+        <h3><b>Physical Sciences</h3></b>
+        <p>Studies regarding non-living organisms, alongside the development of products.</p>
+    </div>
+</div>
+    </header>
+
+    <main class="research-display">
+    <div class="category-title-bar">
+        <h2></h2>
+    </div>
+
+    <div class="carousel-wrapper">
+        <button class="nav-arrow left-arrow">&#10094;</button>
+
+        <div class="research-card">
+            <div class="card-left">
+                <h3></h3>
+                
+                <div class="author-line">
+                    <div class="author-icon"></div> <p>Cabatingan, Marco B., Cabataje, Kirk Cindrich V., Manalo, Prince Chastin Leigh, Marcelo, Mika Anjelo D., *Carilo, Mayumi Mykaela M., Delos Reyes, Andrea R., Soriano, Kirsten Charlene Q.</p>
+                </div>
+
+                <div class="abstract-content">
+                    <p><strong>Abstract:</strong> Tricycles are an essential mode of transportation in the Philippines. In Pasig City, according to the Local Government Unit of Pasig (2022), there are a total of 88 Tricycle Operators and Drivers Associations (TODA). Due to the sheer number of tricycle units present across the city, commuters often struggle to identify which tricycles correspond to specific routes, terminals, and fares...</p>
+                </div>
+
+                <div class="keywords-line">
+                    <p><strong>Keywords:</strong> Tricycles, Tricy-Track, transportation, loading time, task completion rate, user-satisfaction, Wi-Fi, Mobile Data, commute</p>
+                </div>
+            </div>
+
+            <div class="card-right-actions">
+                <button class="action-btn filled"><span class="icon"></span> CITE TEXT</button>
+                <button class="action-btn filled"><span class="icon"></span> SHARE</button>
+                <button class="action-btn filled"><span class="icon"></span> DOWNLOAD</button>
+                <button class="action-btn outlined"><span class="icon"></span> READ FULL</button>
+            </div>
+        </div>
+
+        <button class="nav-arrow right-arrow">&#10095;</button>
+    </div>
+</main>
+
+<div id="footer-trigger" style="height: 200px;"></div>
+
+    <footer class="site-footer">
+        <img class="footer-bg" src="../utils/images/footer.png" alt="" />
+        <div class="footer-icons">
+        <a href="https://www.facebook.com/pcshs.edu" aria-label="PCSHS Facebook page" target="_blank" rel="noopener noreferrer">
+            <img src="../utils/images/fb_logo.png" alt="" />
+        </a>
+        <a href="https://www.facebook.com/sslgpasigsci" aria-label="SSLG Facebook page" target="_blank" rel="noopener noreferrer">
+            <img src="../utils/images/sslg_logo.png" alt="" />
+        </a>
+        </div>
+    </footer>
+
+<script>
+    const footer = document.querySelector('.site-footer');
+        const trigger = document.querySelector('#footer-trigger'); // New target
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px 200px 0px', // Footer triggers 200px before reaching the bottom
+            threshold: 0.6
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    footer.classList.add('is-active');
+                } else {
+                    footer.classList.remove('is-active');
+                }
+            });
+        }, observerOptions);
+
+        if (trigger) {
+            observer.observe(trigger);
+        }
+
+    // 1. Select the elements we want to change
+        const cards = document.querySelectorAll('.card');
+        const categoryBanner = document.querySelector('.category-title-bar h2');
+        const researchTitle = document.querySelector('.card-left h3');
+        const abstractText = document.querySelector('.abstract-content p');
+        const authorText = document.querySelector('.author-line p');
+        const keywordsText = document.querySelector('.keywords-line p');
+        const leftArrow = document.querySelector('.left-arrow');
+        const rightArrow = document.querySelector('.right-arrow');
+        const researchCard = document.querySelector('.research-card');
+
+    // Buttons
+        const citeBtn = document.querySelector(".action-btn.filled:nth-child(1)");
+        const shareBtn = document.querySelector(".action-btn.filled:nth-child(2)");
+        const downloadBtn = document.querySelector(".action-btn.filled:nth-child(3)");
+        const readBtn = document.querySelector(".action-btn.outlined");
+
+        let currentCategory = "RIM";
+        let currentIndex = 0;
+
+    // 2. Define the content for each category
+    const categoryData = {
+        RIM: [
+            {
+                banner: "Robotics and Intelligent Machinery (RIM)",
+                title: "Tricy-Track: Tricycle Terminal and Route Navigating Application in Pasig City",
+                authors: "Cabatingan, Marco B., Cabataje, Kirk Cindrich V., Manalo, Prince Chastin Leigh, Marcelo, Mika Anjelo D., Carilo, Mayumi Mykaela M., Delos Reyes, Andrea R., Soriano, Kirsten Charlene Q.",
+                abstract: "<strong> Abstract: </strong> Tricycles are an essential mode of transportation in the Philippines. In Pasig City, according to the Local Government Unit of Pasig (2022), there are a total of 88 Tricycle Operators and Drivers Associations (TODA). Due to the sheer number of tricycle units present across the city, commuters often struggle to identify which tricycles correspond to specific routes, terminals, and fares. Adding to this, there are persistent instances where tricycle drivers take advantage of commuters who lack knowledge about the fare matrix by overcharging them, resulting in financial exploitation. To address this issue, this study aimed to create an application to aid tricycle commuters during their travels. The application’s data was acquired from online and local sources, particularly from the Tricycle Operation and Regulatory Office (TORO) of Pasig City and made use of Google Maps. The application was programmed by the researchers using various platforms such as GitHub and Ionic Framework, and programming languages such as JavaScript, TypeScript, CSS, and HTML. The researchers utilized black box testing to determine Tricy-Track's performance in terms of loading time and task completion rate. The researchers found no significant difference in the application’s loading time when performing tasks using Wi-Fi or Mobile Data. Furthermore, the application has exhibited a 100% task completion rate. The researchers also included a Usability Testing, with users reporting a high level of satisfaction, which confirmed the app’s reliability and user-friendliness. Overall, the results gathered were able to prove that Tricy-Track is an efficient and satisfactory application for tricycle commuters.",
+                keywords: "<i> <strong> Keywords: </strong> Tricycles, Tricy-Track, transportation, loading time, task completion rate, user-satisfaction, Wi-Fi, Mobile Data, commute </i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1inZFMv_qb4KbNMgR-j-iTnbJc112z8c3",
+                full: "https://drive.google.com/file/d/1inZFMv_qb4KbNMgR-j-iTnbJc112z8c3/view",
+                cite: "Cabatingan, M. B., Cabotaje, K. C. V., Manalo, P. C. L., Marcelo, M. A. D., Carilo, M. M. M., Delos Reyes, A. R., & Soriano, K. C. Q. (2026). Tricy-Track: Tricycle terminal and route navigating application in Pasig City. Pasig City Science High School."
+            },
+            {
+                banner: "Robotics and Intelligent Machinery (RIM)",
+                title: "LabPro: Laboratory Property Assistant - A Monitoring App on Chemistry Laboratory",
+                authors: "Cruz, Ma. Elaira Ivanna A., Tolentino, Yelena Eunice M., Villegas, Mary Divine B.*",
+                abstract: "<strong> Abstract: </strong> The chemistry laboratory is one of the laboratories with several apparatuses and chemicals, and it is typically used for experiments. One problem in the laboratory is the loss of equipment used and borrowed by both faculty members and learners. The researchers developed an app that helped to track inventory equipment; it also included information about the apparatus and chemicals for borrowing apparatus, such as how to use it and how to handle the equipment properly at the Chemistry Laboratory. In the development of LabPro, multiple software programs were used and connected to the app. Cross-platform technology was very important for building the app since it connected the database to the application. The main function of the app was the borrowing of apparatus in the Chemistry laboratory by scanning a QR code. The features of the app included a log-in option for students and School Administration. The researchers utilized several Application Programming Interfaces to successfully implement specific functions of the app. The back end was built using Java libraries and Figma for the front end. Kotlin acted as the programming language. Android Studio was the IDE for developing the Android app. Each type of item had its unique QR code for the safety of the apparatus. LabPro provided real-time tracking and inventory management for chemistry laboratories. This assisted lab operations by increasing apparatus utilization, improving resource allocation, and ensuring the security of equipment. It was a digital tool that enhanced lab management by school personnel and students.",
+                keywords: "<i> <strong> Keywords: </strong> Lab Management, Inventory Tracking, QR Code, Chemistry Laboratory, Cross-Platform App </i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1LChLq-d9g8sOFwWhz6bZFxCNmCSXv291",
+                full: "https://drive.google.com/file/d/1LChLq-d9g8sOFwWhz6bZFxCNmCSXv291/view",
+                cite: "Cruz, M. E. I. A., Tolentino, Y. E. M., Villegas, M. D. B. (2026). LabPro: Laboratory Property Assistant - A Monitoring App on Chemistry Laboratory. Pasig City Science High School."
+            },
+            {
+                banner: "Robotics and Intelligent Machinery (RIM)",
+                title: "RED-E: An ESP32-Based Fire Detecting and Extinguishing Robot with Solar-Charging Battery System and GSM Alerts",
+                authors: "Salen, Ben Russell S., Agaton, Princess Ehrabel S., Amado, Daphne Jane S.*, Bautista, Naomi Hayden, Licdan, Allhea Heart L., Lucero, Nickolle Franchesca R., Piad, Angel Sariah D., Tanquizon, Andrea Louisse M.",
+                abstract: "<strong> Abstract: </strong> Domestic fires remain a threat in the Philippines, where emergency response times range from 7 to 30 minutes. This study developed RED-E, an ESP32-based firefighting robot with real-time fire detection, suppression via an ABC extinguisher, and user notification. The system uses a multi-modal sensor array of an infrared flame sensor, an MQ-2 smoke sensor, and a thermal sensor, integrated with an Air780E GSM module, and powered by a solar-charging battery system. A quantitative quasi-experimental research design evaluated the prototype at distances ranging from 0.50 m to 1.50 m. Conditional logic triggered alerts only when multiple sensor thresholds were simultaneously exceeded. Results showed strong detection reliability and performance consistency.",
+                keywords: "<i> <strong> Keywords: </strong> Autonomous Fire Suppression, Mobile Firefighting Robot, Multi-Sensor Detection, Real-Time Fire Monitoring, Solar-Charging Battery System </i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1os7XdAqj3BA7as92K0EQqqX07yp_6ab6",
+                full: "https://drive.google.com/file/d/1os7XdAqj3BA7as92K0EQqqX07yp_6ab6/view",
+                cite: "Salen, B. R. S., Agaton, P. E. S., Amado, D. J. S., et al. (2026). RED-E: An ESP32-Based Fire Detecting and Extinguishing Robot with Solar-Charging Battery System and GSM Alerts. Pasig City Science High School."
+            },
+            {
+                banner: "Robotics and Intelligent Machinery (RIM)",
+                title: "Sentry: An Automated E-Jeep Passenger Overload, Speed Violation, and Smoke Emission Detection System with Automated Violation Reporting",
+                authors: "Alberto, Nathanael G., *Alejandro, Aeron Mitsh V., Borjal, Joaquin Antonio G., Cabezas, Matt Harie N., Domalaon, Lewis Ezekielle S., Gregorio, Ton Andrei B.",
+                abstract: "<strong> Abstract: </strong> Even with the Public Utility Vehicle Modernization Program (PUVMP), safety compliance in Philippine public transport is still a challenge. Current enforcement relies heavily on roadside inspections, cameras, and manual checks. This study introduces SENTRY, an onboard monitoring system providing continuous, automated monitoring of passenger overload, overspeed, and smoke emissions. The system uses ultrasonic sensors, GNSS modules, and MQ-135 gas sensors, including GSM-based SMS reporting to alert authorities of violations in real time. Testing showed high accuracy, precision, recall, and F1-scores across all modules.",
+                keywords: "<i> <strong> Keywords: </strong> Public Transport Safety, Passenger Overload, Overspeeding Violation, Smoke Emission, E-Jeepney Operations, Safety Enforcement </i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1J1moO-L55nVbZNmyFGez9WGAltS3f-Wt",
+                full: "https://drive.google.com/file/d/1J1moO-L55nVbZNmyFGez9WGAltS3f-Wt/view",
+                cite: "Alberto, N. G., Alejandro, A. M. V., Borjal, J. A. G., et al. (2026). Sentry: An Automated E-Jeep Passenger Overload, Speed Violation, and Smoke Emission Detection System. Pasig City Science High School."
+            },
+            {
+                banner: "Robotics and Intelligent Machinery (RIM)",
+                title: "SolAqua: Solar-Powered Automated Aquatic Debris Collector and Oil Spill Cleaning Device",
+                authors: "Belen, Gabriel B., Narvaez, Genrev P., Velasco, Simon Joseph Benedict N., Comsti, Maria Gabriela C., Mercene, Maxine Yvanna B., Panganiban, Kate Emphres B., Uayan, Miara Dominique B.",
+                abstract: "<strong> Abstract: </strong> SolAqua is a solar-powered device designed to automate aquatic debris collection and oil spill cleanup. It uses ESP32 microcontrollers, Raspberry Pi, sensor networks, and buoyancy/gravimetric analysis with human hair mesh. The system improves water cleanliness efficiently with minimal human intervention.",
+                keywords: "<i> <strong> Keywords: </strong> Solar-Powered, Automated Water Trash Collector, Oil Spill Cleanup, ESP32 Microcontroller, Raspberry Pi, Sensor Network, Buoyancy, Gravimetric Analysis, Human Hair Mesh </i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1ArO1UcAPae07ZHg0u8ZCzSbITGMUCnjE",
+                full: "https://drive.google.com/file/d/1ArO1UcAPae07ZHg0u8ZCzSbITGMUCnjE/view",
+                cite: "Belen, G. B., Narvaez, G. P., Velasco, S. J. B. N., et al. (2026). SolAqua: Solar-Powered Automated Aquatic Debris Collector and Oil Spill Cleaning Device. Pasig City Science High School."
+            },
+            {
+                banner: "Robotics and Intelligent Machinery (RIM)",
+                title: "VitaLink: A LoRa-Based Wearable Vital Sign Beacon and Centralized Localization System for Mountain Rescue",
+                authors: "Ayson, Liam Ythaniel, *Carlos, Carylle Ann A., Lim, Heart Angel B., Pepito, Daniella Venice M., Tulang, Syesha Lee B., Vistar, Daniel Lawrence B.",
+                abstract: "<strong> Abstract: </strong> VitaLink is a LoRa-based wearable beacon transmitting pulse rate, SpO2, and GPS location without Wi-Fi or cellular networks. The wrist-worn device integrates MAX30102 and NEO-M8N sensors, LoRa SX1278 module, receiver unit, and web-based monitoring platform. Experiments show reliable physiological monitoring and communication even in obstructed environments, supporting mountain rescue operations.",
+                keywords: "<i> <strong> Keywords: </strong> Mountain rescue, LoRa, web-based monitoring platform, vital sign beacon </i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1sLMr4iuXvULXKFxKY9EQZ4RfCZvDh30E",
+                full: "https://drive.google.com/file/d/1sLMr4iuXvULXKFxKY9EQZ4RfCZvDh30E/view",
+                cite: "Ayson, L. Y., Carlos, C. A. A., Lim, H. A. B., et al. (2026). VitaLink: A LoRa-Based Wearable Vital Sign Beacon and Centralized Localization System for Mountain Rescue. Pasig City Science High School."
+            },
+            {
+                banner: "Robotics and Intelligent Machinery (RIM)",
+                title: "W.R.I.S.T: Wearable Real-time Innovative Sensor for Tracking Vitals",
+                authors: "ANONICAL, Sebastian Aaron C., CALUMA, Atasha Reign P., JUDAL, Nathaniel D., MARTINEZ, Hyacinth Agnetti B., SISON, Alyson Nicole E., TAN, Gian Gabriel C.",
+                abstract: "<strong> Abstract: </strong> W.R.I.S.T. is a wearable wrist-mounted device designed for continuous monitoring of vital signs in real-time, improving emergency care efficiency. It tracks blood pressure, heart rate, respiratory rate, and body temperature with high correlation to standard clinical instruments.",
+                keywords: "<i> <strong> Keywords: </strong> Wearable medical device, Vital signs monitoring, Continuous real-time monitoring, Multi-parameter monitoring, Emergency care efficiency </i>",
+                pdf: "https://drive.google.com/uc?export=download&id=14tq_xcBBWdEC2MYAvVuGDh8-eA8ygdIk",
+                full: "https://drive.google.com/file/d/14tq_xcBBWdEC2MYAvVuGDh8-eA8ygdIk/view",
+                cite: "ANONICAL, S. A. C., CALUMA, A. R. P., JUDAL, N. D., et al. (2026). W.R.I.S.T: Wearable Real-time Innovative Sensor for Tracking Vitals. Pasig City Science High School."
+            },
+            {
+                banner: "Robotics and Intelligent Machinery (RIM)",
+                title: "Wrist-Cue Me: Alert Bracelet for Disaster Situations Using Gyroscope Technology to Send GPS Location via Discord Webhook",
+                authors: "Quimpo, Joshua Wesley M., Vallesteros, Neswin Teodor M., Cea, Miyo Samantha M., Guarte, LJ P., Legaspi, Erin Dominique Y., Tekiko, Christine Nicole F.",
+                abstract: "<strong> Abstract: </strong> This study develops a motion-activated emergency alert bracelet that transmits a student's real-time GPS location to a school emergency response team via a Discord bot. Prototype testing evaluated false activation rate, message transmission times, and GPS positional accuracy in indoor/outdoor conditions. Results show Wrist-Cue Me has potential as a school-based emergency preparedness tool.",
+                keywords: "<i> <strong> Keywords: </strong> Disaster Preparedness, Wearable Technology, Discord Bot, Student Safety </i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1sc074PKurLH2wAqjn1HoeNYrciKBw94q",
+                full: "https://drive.google.com/file/d/1sc074PKurLH2wAqjn1HoeNYrciKBw94q/view",
+                cite: "Quimpo, J. W. M., Vallesteros, N. T. M., Cea, M. S. M., et al. (2026). Wrist-Cue Me: Alert Bracelet for Disaster Situations Using Gyroscope Technology. Pasig City Science High School."
+            }
+            ],
+
+       "Data Sciences": [
+            {
+                banner: "Data Sciences",
+                title: "Dalikmata-Mulat: Developing an AI Radiologist and Dermatologist Specializing in Chest X-ray and Skin Lesion Using an EfficientNet Architecture",
+                authors: "Ricafrente, John Patrick M., Samson, Kean Josiah S., Taño, Sean Joshua P.",
+                abstract: "<strong>Abstract:</strong> In pursuit of the United Nations Sustainable Development Goals (SDGs), particularly SDG 3 (Good Health and Well-Being) and SDG 10 (Reduced Inequalities), this study aims to promote accessible and equitable healthcare through artificial intelligence. Healthcare affordability remains a pressing issue in the Philippines, where rising costs make regular check-ups inaccessible to many. Artificial intelligence offers diagnostic potential, yet most systems are single-modality and tested under lenient conditions, limiting clinical practicality. To address these gaps, this study developed Dalikmata-Mulat, an AI-based web application evaluating EfficientNet variants (Mulat-b0 to Mulat-b4) for skin lesion classification and chest X-ray interpretation. Using publicly available datasets—HAM10000 and BCN20000 for skin lesions, and ChestX-ray14 with external sets for pneumothorax and pneumonia—the models were evaluated under in-distribution and out-of-distribution (OOD) conditions. Performance metrics included Top-1 Accuracy for skin lesions and Optimal Threshold F1 with AUROC for chest X-rays. Statistical analyses employed Cochran’s Q test and pairwise McNemar tests at α = 0.01 with Bonferroni correction. Results showed that Mulat-b1 achieved the highest accuracy in skin lesion classification across validation (91.15%), testing (89.82%), and OOD datasets (70.98%). Cochran’s Q confirmed significant performance differences only in OOD skin lesion data, with McNemar tests revealing Mulat-b1’s improvement over Mulat-b0. These findings demonstrate that increasing model size alone does not guarantee diagnostic superiority, and that moderate scaling—represented by Mulat-b1—offers the most efficient balance of accuracy, stability, and computational cost. The study emphasizes the importance of domain adaptation and calibration to strengthen AI’s clinical applicability.",
+                keywords: "<i><strong>Keywords:</strong> Artificial Intelligence, Medical Diagnosis, EfficientNet, Skin Lesions, Chest X-rays, Web Application</i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1sBMSDGQWKDHd7i7gC5yU6r04vB5-jrLt",
+                full: "https://drive.google.com/file/d/1sBMSDGQWKDHd7i7gC5yU6r04vB5-jrLt/view",
+                cite: "Ricafrente, J. P. M., Samson, K. J. S., Taño, S. J. P. (2026). Dalikmata-Mulat: Developing an AI Radiologist and Dermatologist Specializing in Chest X-ray and Skin Lesion Using an EfficientNet Architecture. Pasig City Science High School."
+            },
+            {
+                banner: "Data Sciences",
+                title: "INFORMATHIV AID: Comparison of ARIMA and Exponential Smoothing Time-Series Models’ Performance for HIV/AIDS Cases in Pasig City",
+                authors: "Balanrayos, Jayke Brylle, Sarabosing, Toffer, Tan, Andrelle, Balaos, Shannon Gail, Gambon, Gillian, Mancilla, Joelle Audrey, Polistico, Cassandra Leanne",
+                abstract: "<strong>Abstract:</strong> In the Philippines, Human Immunodeficiency Virus (HIV) cases continue to rise at a rapid rate. Local communities lack sufficient information literacy to understand the expansion of cases. To fill in this gap, time-series modeling was performed using ARIMA (Autoregressive Integrated Moving Average) Exponential Smoothing Model: ETS (Error, Trend, Seasonal) mathematical models to estimate future case numbers in Pasig City. This study compared the predictive performance of ARIMA and ETS models in forecasting annual HIV/AIDS cases. Data for HIV/AIDS cases were obtained from Pasig City Health Department with years 2017 to 2024 used for model estimation, and the year 2024 reserved for validation to assess forecast accuracy. Using the Box-Jenkins method, ARIMA (0,1,1) was selected based on the lowest AIC (Akaike Information Criterion, = 5.16). For ETS model, Holt’s Linear Trend model utilized smoothing parameters α= 0.4 and β = 0.9, where its parameters were selected using the lowest RMSE (Root Mean Squared Error). Log transformation was applied for variance stabilization. Comparative results demonstrated ARIMA (0,1,1) outperformed ETS model ( 0. 4, 0. 9) producing lower forecast errors (RMSE = 0.2099; MAE = 0.1308) compared to Holt’s Linear Trend (RMSE = 0.3244; MAE = 0.2720). Results indicate that ARIMA provides a more accurate short-term forecast for the given dataset, although limited observations constrain long term projection reliability. These results support the integration of statistical forecasting models into local HIV/AIDS monitoring and development initiatives.",
+                keywords: "<i><strong>Keywords:</strong> HIV, AIDS, ARIMA, Exponential Smoothing, RMSE, MAE</i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1PInzjlLOzC2WyH9_loRzQeuFQC_i13uI",
+                full: "https://drive.google.com/file/d/1PInzjlLOzC2WyH9_loRzQeuFQC_i13uI/view",
+                cite: "Balanrayos, J. B., Sarabosing, T., Tan, A., Balaos, S. G., Gambon, G., Mancilla, J. A., Polistico, C. L. (2026). INFORMATHIV AID: Comparison of ARIMA and Exponential Smoothing Time-Series Models’ Performance for HIV/AIDS Cases in Pasig City. Pasig City Science High School."
+            },
+            {
+                banner: "Data Sciences",
+                title: "Pasckey: Development of an Integrated School Identification System for Attendance Monitoring, Cashless Transactions, Digital Clinic Management, Disaster Emergency Alerts, and SMS Notification Delivery",
+                authors: "Dave, Wyatt Matthew S., Eclarinal, Felicity Ania Marie, Gregorio, Natalie, Martin, Reyver Sebastien G., Mendoza, Rey Ymmanuele B., Ramos, Angelo Penny L.",
+                abstract: "<strong>Abstract:</strong> Pasckey is an integrated RFID-based school management system developed to automate attendance recording, cashless transactions, digital clinic recording, disaster emergency alerts, and Short Message Service (SMS)-based notifications. The system utilized 13.56 MHz Radio Frequency Identification (RFID) technology. It was tested with 21 participants, each assigned a unique RFID identifier, to evaluate success rate, response latency, and usability. Experimental results demonstrated a 100% success rate across all functional modules, with mean response times of 0.79 seconds for attendance recording, 0.49 seconds for digital clinic recording, 0.31 seconds for cashless canteen transactions, and 2.30 seconds for SMS notifications. Weighted mean analysis revealed all modules to be highly usable, confirming the system’s operational efficiency and accessibility. These results validate Pasckey as a reliable, efficient, and practical solution for automating key administrative processes in schools, enhancing data integrity, operational efficiency, and emergency communication operations.",
+                keywords: "<i><strong>Keywords:</strong> RFID technology, attendance recording, cashless transactions, digital clinic recording, SMS notification</i>",
+                pdf: "https://drive.google.com/uc?export=download&id=11ntMj7pjn629Dol3_TFnrNBNn3fJMlRu",
+                full: "https://drive.google.com/file/d/11ntMj7pjn629Dol3_TFnrNBNn3fJMlRu/view",
+                cite: "Dave, W. M. S., Eclarinal, F. A. M., Gregorio, N., Martin, R. S. G., Mendoza, R. Y. B., Ramos, A. P. L. (2026). Pasckey: Development of an Integrated School Identification System. Pasig City Science High School."
+            },
+            {
+                banner: "Data Sciences",
+                title: "QR-ID 2.0: Optimizing QR Technology Through Internet Systems with Role-Specific Access for School Attendance Management",
+                authors: "Arcenas, Kristopher Mykyle D., Franco, Elisha Claine P., Lim, Joanna Marie D., Puro, Samiela Evanie D., Sonsing, Shanika Eumi M., Ventura, Wynona Chrissandra Z., Villegas, Juan Miguel L.",
+                abstract: "<strong>Abstract:</strong> Many schools in the Philippines still monitor attendance through the use of traditional pen-and-paper, which is an outdated attendance tracking method that is time-consuming, inefficient, and subject to inaccurate data due to human errors. This study presents an improved version of QR-ID, a cost-effective and efficient QR-code-based application to track and manage attendance records. QR-ID 2.0 is an application and website with additional features allowing role-specific access with a different and user-friendly interface for both students and administrators. Each participant received a QR-ID code linked to their LRN, which a representative would scan daily using the app. Based on t-test evaluation of accuracy, the new QR-ID showed a mean accuracy of 99.81%, showing no statistical difference between QR-ID and the traditional pen-and-paper (W = 0, p = 0.317), maintaining a 100% accuracy rate in 9 out of 10 total sessions between both sections. According to user response, QR-ID 2.0 gained a mean score of 5 in both functionality and accessibility, performing better than both the traditional and old QR-ID methods. The findings suggested that QR-ID 2.0 performed well compared to both the pen-and-paper method and QR-ID 1.0, significantly improving attendance management accuracy, time-efficiency, and overall functionality.",
+                keywords: "<i><strong>Keywords:</strong> attendance, QR technology, database, application, website</i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1H0A-IZNIP3QxLOytkce2TZOtV4Bx-6zl",
+                full: "https://drive.google.com/file/d/1H0A-IZNIP3QxLOytkce2TZOtV4Bx-6zl/view",
+                cite: "Arcenas, K. M. D., Franco, E. C. P., Lim, J. M. D., Puro, S. E. D., Sonsing, S. E. M., Ventura, W. C. Z., Villegas, J. M. L. (2026). QR-ID 2.0: Optimizing QR Technology Through Internet Systems with Role-Specific Access for School Attendance Management. Pasig City Science High School."
+            },
+            {
+                banner: "Data Sciences",
+                title: "TRACKCYCLE: An Integrated System for Real-Time Tricycle Booking and Service Accessibility",
+                authors: "Ambegia, Daniel G., Dorol, Shanin Agatha C., Ilao, Jhiane Reece L., Leonida, Djarrel Wayne M., Saguid, John Rovi S., Sarmiento, Ingrid Faye Q.",
+                abstract: "<strong>Abstract:</strong> The transportation system in the Philippines continues to face incompetencies and accessibility limitations, particularly within tricycle commuting. Long waiting times and difficulty in locating accessible rides negatively affect commuter efficiency and overall travel convenience. These conditions emphasize the necessity for a reliable, technology-based transportation system. In response to these concerns, this study developed Trackcycle, a mobile application designed to deliver an integrated tricycle booking system. The study evaluated the application’s accuracy, response time, and efficiency. Results showed that Trackcycle achieved a high level of accuracy, acquiring a 99.9% location accuracy and 100% accuracy on information exchange. In terms of efficiency, the application received high ratings from passengers and moderate ratings from drivers. Furthermore, Trackcycle’s response time showed no significant difference with the standard benchmark for similar applications. In summary, Trackcycle met its objective of making commuting experience more convenient and less hassle, while still presenting opportunities for further improvement.",
+                keywords: "<i><strong>Keywords:</strong> Booking system, Ride-hailing application, Accuracy, Efficiency, Response Time</i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1hjeLoVOBK0O_023AE3vZJW2ktUTLdEbu",
+                full: "https://drive.google.com/file/d/1hjeLoVOBK0O_023AE3vZJW2ktUTLdEbu/view",
+                cite: "Ambegia, D. G., Dorol, S. A. C., Ilao, J. R. L., Leonida, D. W. M., Saguid, J. R. S., Sarmiento, I. F. Q. (2026). TRACKCYCLE: An Integrated System for Real-Time Tricycle Booking and Service Accessibility. Pasig City Science High School."
+            }
+            ],
+
+        "Life Sciences": [
+            {
+                banner: "Life Sciences",
+                title: "Analysis of Cymbopogon citratus (Lemongrass) Compounds as Potential Binders of 1,3,8-trihydroxynaphthalene Reductase (THNR) Enzyme in Magnaporthe oryzae (Rice Blast Fungus) Through Molecular Docking",
+                authors: "Cano, Mark Andrei M., Dela Cruz, Bernice Shayne M., Lachica, Frieze Lhanze L., Ronario, Xyrill Joyce B., Sy, Venice Althea M.",
+                abstract: "Rice blast disease remains a major agricultural threat worldwide and in the Philippines, where rice serves as a primary staple and source of livelihood. The disease is caused by Magnaporthe oryzae and can result in severe yield losses during epidemic outbreaks. A key factor in the pathogen’s virulence is the enzyme 1,3,8-trihydroxynaphthalene reductase (THNR), which is essential in the dihydroxynaphthalene (DHN) melanin pathway that enables fungal penetration into host tissues. The commonly used melanin biosynthesis inhibitor Tricyclazole remains an effective control measure; however, resistance development and environmental concerns highlight the need for safer and sustainable alternatives. Despite increasing interest in plant-based antifungal agents, limited molecular docking studies have examined the inhibitory potential of Cymbopogon citratus phytochemicals against THNR. This research analyzed twenty-one lemongrass-derived compounds through molecular docking simulations to evaluate their potential binding affinity against THNR. Docking results identified Warfarin and Tannic Acid as the strongest binders, both achieving −9.2 kcal/mol, followed by Alpha-amyrin (−8.3 kcal/mol), Beta-amyrin (−8.2 kcal/mol), and Swertiajaponin (−8.1 kcal/mol), all surpassing the binding affinity of tricyclazole (−7.2 kcal/mol). Statistical analysis using the Kruskal–Wallis test demonstrated significant differences among compounds (p < 0.05), confirming the reliability of docking outcomes. The findings suggest that selected lemongrass phytochemicals exhibit promising inhibitory potential against THNR. Further in vitro and in vivo investigations are necessary to validate their antifungal efficacy and support the development of eco-friendly rice blast management strategies.",
+                keywords: "<i><strong>Keywords:</strong> Cymbopogon citratus, Magnaporthe oryzae, THNR, Molecular Docking</i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1ZTXndXbLkj1SWsgTgO29CFBotflOz0Me",
+                full: "https://drive.google.com/file/d/1ZTXndXbLkj1SWsgTgO29CFBotflOz0Me/view",
+                cite: "Cano, M. A. M., Dela Cruz, B. S. M., Lachica, F. L. L., Ronario, X. J. B., Sy, V. A. M. (2026). Analysis of Cymbopogon citratus (Lemongrass) Compounds as Potential Binders of 1,3,8-trihydroxynaphthalene Reductase (THNR) Enzyme in Magnaporthe oryzae (Rice Blast Fungus) Through Molecular Docking. Pasig City Science High School."
+            },
+            {
+                banner: "Life Sciences",
+                title: "Anticancer Activity and Apoptotic Induction of C. Fruticosa Leaf against HeLa Cell Lines",
+                authors: "Beloy, Marie Claire R., Clet, Justine Mikyla S., Santiago, Sophia Nicole A.",
+                abstract: "Cervical cancer remains one of the most prevalent cancers among women worldwide and continues to pose a major global health challenge. Despite advances in treatment, the limitations and adverse effects of conventional therapies emphasize the need for safer and more effective anticancer agents derived from natural sources. This study investigated the anticancer potential of Cordyline fruticosa leaf methanolic extract against cervical cancer (HeLa) cells by analyzing its phytochemical composition, cytotoxic activity, and ability to induce apoptosis. High-Performance Liquid Chromatography (HPLC) was used to identify the extract’s flavonoid content. Five major flavonoids were detected: Rutin (35.2%), Luteolin (20.1%), Kaempferol-3-O-glucoside (17.8%), Apigenin (14.6%), and a Myricetin derivative (8.3%). These compounds are known for their antioxidant and anticancer properties, suggesting that C. fruticosa is a promising source of bioactive phytochemicals. Cytotoxic activity was evaluated using the MTT assay. HeLa cells treated with extract concentrations ranging from 0–100 μg/mL for 48 hours exhibited a dose-dependent reduction in cell viability, with an IC50 value of 21.58 μg/mL, indicating a high cytotoxicity. One-way ANOVA showed significant differences among treatment groups (p < 0.001), confirming the extract’s inhibitory effect on cancer cell proliferation. To determine the mechanism underlying this cytotoxic effect, apoptosis was assessed using TUNEL and Annexin V/PI staining. The TUNEL assay revealed increased DNA fragmentation at higher extract concentrations. Flow cytometry analysis further demonstrated concentration-dependent apoptosis, with apoptotic cell percentages of 24.3%, 46.7%, and 71.2% at 25 μg/mL, 50 μg/mL, and 100 μg/mL, respectively, compared to 5.8% in untreated cells. These results demonstrate that the methanolic extract of C. fruticosa leaf not only inhibits cellular proliferation but also actively promotes programmed cell death, a desirable mechanism in anticancer therapy.",
+                keywords: "<i><strong>Keywords:</strong> MTT assay, Cytotoxicity, Flavonoids, TUNEL assay, Annexin V/PI staining, Apoptosis</i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1jwblY6tHE2tLsWAZ3sSmqedjn7eMhv1q",
+                full: "https://drive.google.com/file/d/1jwblY6tHE2tLsWAZ3sSmqedjn7eMhv1q/view",
+                cite: "Beloy, M. C. R., Clet, J. M. S., Santiago, S. N. A. (2026). Anticancer Activity and Apoptotic Induction of C. Fruticosa Leaf against HeLa Cell Lines. International Journal of Research and Scientific Innovation (IJRSI). https://doi.org/10.51244/IJRSI.2026.13010247"
+            },
+            {
+                banner: "Life Sciences",
+                title: "CitraVera: Antimicrobial Efficacy of Green-Synthesized Zinc Oxide Nanoparticles Using Orange Peel and Aloe Vera",
+                authors: "Gloria, Ed Rubic T., Intad, Abiezer Aaron B., Rala, Chive Ancel Vonmart F., Magsino, Carl Janrick A., Bien, Queensy May L., Lajara, Deniza Kinch C., Maagma, Reema Dominique N., Umandal, Maria Ysabelle S.",
+                abstract: "Antibiotic resistance is a serious global health concern, with Staphylococcus aureus recognized as a major pathogen due to its ability to develop resistance and cause severe infections. This study aimed to assess and compare various combinations of orange peel and aloe vera extracts (50:50, 25:75, and 75:25) for the biosynthesis of liquidized zinc oxide nanoparticles (ZnONPs) and to evaluate their antimicrobial activity. Using the Kirby–Bauer disk diffusion method, the biosynthesized ZnONP solutions were compared with a 10% vancomycin solution, which served as the positive control. Results showed that all ZnONP mixtures produced a mean ± standard deviation zone of inhibition of 0.00 ± 0.00 mm, indicating no observable antimicrobial activity. In contrast, the 10% vancomycin treatment demonstrated antimicrobial effectiveness with a mean ± standard deviation zone of inhibition of 20.00 ± 17.44 mm. One-way ANOVA revealed no statistically significant difference among treatment groups (F = 3.947, p = 0.053) at the 0.05 level. These findings suggest that although vancomycin exhibited greater inhibitory activity than the biosynthesized ZnONP mixtures, the differences did not reach statistical significance under the conditions of this study.",
+                keywords: "<i><strong>Keywords:</strong> antibiotic resistance, biosynthesis, Staphylococcus aureus, Zinc oxide nanoparticles</i>",
+                pdf: "https://drive.google.com/uc?export=download&id=16TC9pCHVEY2UPdNTeuJoZr0MAAp76H_u",
+                full: "https://drive.google.com/file/d/16TC9pCHVEY2UPdNTeuJoZr0MAAp76H_u/view",
+                cite: "Gloria, E. R. T., Intad, A. A. B., Rala, C. A. V. F., Magsino, C. J. A., Bien, Q. M. L., Lajara, D. K. C., Maagma, R. D. N., Umandal, M. Y. S. (2026). CitraVera: Antimicrobial Efficacy of Green-Synthesized Zinc Oxide Nanoparticles Using Orange Peel and Aloe Vera. Pasig City Science High School."
+            },
+            {
+                banner: "Life Sciences",
+                title: "In Silico Analysis of Iminosugars as NS-1 Inhibitors Against Dengue Virus Serotype-1",
+                authors: "Cruz, Sophia Viktoria C., Ignacio, Riana Marielle P., Mojica, Aiyrisz Faye F., Seda, Nathalie Joyce I., Victorino, Venice Marbette M., Vivas, Miguel",
+                abstract: "Dengue fever remains a significant global health challenge, with an estimated 100–400 million infections annually. In the Philippines, cases have increased by approximately 75%, largely attributed to environmental factors and expanding mosquito populations. Among circulating serotypes, DENV-1 is predominant, and its nonstructural protein 1 (NS-1) plays a critical role in viral pathogenesis and immune evasion. Iminosugars, known inhibitors of glucosidase enzymes involved in viral glycoprotein processing, have emerged as potential antiviral agents. This study employed computational bioinformatics approaches, including molecular docking and statistical analysis, to evaluate selected iminosugars as inhibitors of the DENV-1 NS-1 protein. Drug-likeness assessment based on Lipinski’s Rule of Five identified Celgosivir, D-butyl DNJ, MON-DNJ, NN-DNJ, and N-alkyl derivative 7 as orally viable candidates, while two compounds violated multiple criteria. Docking results revealed that MON-DNJ and Celgosivir demonstrated the strongest binding affinities (−8.39 and −7.523 kcal/mol, respectively), surpassing reference drugs such as Balapiravir, Doxycycline, and Acetaminophen. Key molecular interactions included stabilizing hydrogen bonds with residues Asn 293, Arg 314, Arg 294, and Glu 289, supported by van der Waals interactions that enhanced protein–ligand stability. Low Root Mean Square Deviation values further confirmed the structural consistency of MON-DNJ binding conformations. Statistical evaluation using the Mann–Whitney U test indicated no significant difference between iminosugar and control drug binding affinities. These findings identify selected iminosugars as promising molecular scaffolds for antiviral development targeting DENV-1 and demonstrate the utility of computational methods in accelerating therapeutic discovery.",
+                keywords: "<i><strong>Keywords:</strong> Dengue, DENV-1, Iminosugars, NS-1 Protein, Molecular Docking</i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1zPN2r3nW_6iX3SQj8HqZD0Bm64Q53jef",
+                full: "https://drive.google.com/file/d/1zPN2r3nW_6iX3SQj8HqZD0Bm64Q53jef/view",
+                cite: "Cruz, S. V. C., Ignacio, R. M. P., Mojica, A. F. F., Seda, N. J. I., Victorino, V. M. M., Vivas, M. (2026). In Silico Analysis of Iminosugars as NS-1 Inhibitors Against Dengue Virus Serotype-1. Pasig City Science High School."
+            }
+            ],
+
+        "Physical Sciences": [
+            {
+                banner: "Physical Sciences",
+                title: "EcoBomb: Combined Efficacy of Eichhornia crassipes (Water Hyacinth) and Moringa oleifera (Malunggay) Plant Extracts as a Bath Bomb-Inspired Water Treatment for the Pasig River",
+                authors: "Carlos, Carylle Ann A., Bautista, Aniel John A., Gregorio, Natalie, Kimmayong, Reece Camilla P., Lim, Heart Angel B., Zamora, Treanne E.",
+                abstract: "<strong>Abstract:</strong> This study aimed to evaluate the antimicrobial effectiveness of a bath bomb-inspired formulation composed of Eichhornia crassipes (Water Hyacinth) and Moringa oleifera (Malunggay) extracts in reducing the Total Coliform (TC) and Total Fecal Coliform (TFC) levels in Pasig River water samples. The experiment utilized three concentration ratios of the plant extracts—50:50 (5 g Malunggay; 0.375 g Water Hyacinth), 70:30 (7 g Malunggay; 0.225 g Water Hyacinth), and 30:70 (3 g Malunggay; 0.525 g Water Hyacinth). Each formulation was added to 100 mL of river water and left to react for 24 hours, while an untreated sample served as the control. Coliform levels were determined through the Most Probable Number (MPN) test. The results revealed that instead of decreasing, both Total Coliform and Total Fecal Coliform counts significantly increased across all treated samples compared to the untreated sample. Percent changes ranged from +400% to +7,517% for TC and +183% to +639% for TFC. The findings suggest that the extraction and formulation methods may have degraded the bioactive compounds or introduced additional nutrients that stimulated microbial growth rather than inhibiting it. It is concluded that the EcoBomb formulations were not effective in reducing bacterial contamination.",
+                keywords: "<i><strong>Keywords:</strong> Eichhornia crassipes, Moringa oleifera, EcoBomb, Coliform levels, Water treatment</i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1qqcmPp_omL59oKXWwVwRrh_Qz6ck3p3_",
+                full: "https://drive.google.com/file/d/1qqcmPp_omL59oKXWwVwRrh_Qz6ck3p3_/view",
+                cite: "Carlos, C. A. A., Bautista, A. J. A., Gregorio, N., Kimmayong, R. C. P., Lim, H. A. B., Zamora, T. E. (2026). EcoBomb: Combined Efficacy of Eichhornia crassipes and Moringa oleifera Plant Extracts as a Bath Bomb-Inspired Water Treatment for the Pasig River. Pasig City Science High School."
+            },
+            {
+                banner: "Physical Sciences",
+                title: "ORANA: The Laxative and Antioxidant Potential of Orange and Banana Peel-Based Gummy Supplement",
+                authors: "Calma, Josiah Aji, Alderete, Angela Krizza, Panaligan, Ysabelle, Salandanan, Kainah Faye, Tupas, Hazel Mae, Yap, Janna Mikaela",
+                abstract: "<strong>Abstract:</strong> Constipation is a common gastrointestinal condition often treated with synthetic laxatives that may cause long-term side effects such as dependency and dehydration. This study aimed to formulate and evaluate ORANA, a natural gummy supplement made from orange (Citrus sinensis) and banana (Musa acuminata) peel extracts, to determine its potential antioxidant and laxative properties. The fruit peels were dried, extracted, and combined in varying ratios, 25:75 and 75:25, to assess which formulation demonstrated the highest bioactive potential. Laboratory analyses were conducted to evaluate antioxidant activity using the DPPH assay, water-holding capacity, pH level, and microbial safety. Statistical analysis through ANOVA was performed to determine significant differences among treatments. Results revealed that the banana-rich formulation (25% orange peel and 75% banana peel) exhibited the highest antioxidant inhibition rate of 83.46%, greater water-holding capacity at 8.122%, and a pH level of 3.8, indicating both strong antioxidant and potential laxative effects. These findings suggest that orange and banana peel-based gummies can serve as an effective, eco-friendly supplement for promoting digestive health while contributing to fruit waste reduction.",
+                keywords: "<i><strong>Keywords:</strong> Musa acuminata, bioactive compound, Constipation, Citrus sinensis, Flavonoids, microbial analysis, phenolic compounds, phytochemicals, polyphenols</i>",
+                pdf: "https://drive.google.com/uc?export=download&id=1_csX54Ux3lm_mearPGhDedMHymHmFDAz",
+                full: "https://drive.google.com/file/d/1_csX54Ux3lm_mearPGhDedMHymHmFDAz/view",
+                cite: "Calma, J. A., Alderete, A. K., Panaligan, Y., Salandanan, K. F., Tupas, H. M., Yap, J. M. (2026). ORANA: The Laxative and Antioxidant Potential of Orange and Banana Peel-Based Gummy Supplement. Pasig City Science High School."
+            }
+            ]
+    };
+
+    function updateResearch() {
+        const data = categoryData[currentCategory][currentIndex];
+
+            currentResearch = data; // <-- important!
+
+        categoryBanner.textContent = data.banner;
+        researchTitle.textContent = data.title;
+        abstractText.innerHTML = data.abstract;
+
+        authorText.textContent = data.authors;
+        keywordsText.innerHTML = data.keywords;
+    }
+
+    // 3. Add the click event to each card
+    cards.forEach(card => {
+        card.style.cursor = "pointer"; // Make it look clickable
+        
+
+        
+        card.addEventListener('click', () => {
+            const category = card.getAttribute('data-category');
+            currentCategory = category;
+            currentIndex = 0;
+
+            updateResearch();
+
+            document.querySelector('.research-card').style.opacity = "1";
+
+            // Optional: Smooth scroll down to the research section
+            document.querySelector('.research-display')
+            .scrollIntoView({ behavior: 'smooth' });
+
+        });
+  
+    });
+    
+function changeResearch(direction){
+
+    const list = categoryData[currentCategory];
+
+    researchCard.classList.add("fade"); // start fade out
+
+    setTimeout(() => {
+
+        currentIndex += direction;
+
+        if(currentIndex >= list.length) currentIndex = 0;
+        if(currentIndex < 0) currentIndex = list.length - 1;
+
+        updateResearch();
+
+        researchCard.classList.remove("fade"); // fade back in
+
+    }, 250); // match CSS speed
+}
+
+rightArrow.addEventListener("click", () => changeResearch(1));
+leftArrow.addEventListener("click", () => changeResearch(-1));
+    
+updateResearch(); 
+
+// CITE TEXT
+citeBtn.addEventListener("click", () => {
+if(!currentResearch) return;
+navigator.clipboard.writeText(currentResearch.cite);
+alert("Citation copied to clipboard!");
+});
+
+// SHARE
+shareBtn.addEventListener("click", () => {
+if(!currentResearch) return;
+navigator.clipboard.writeText(currentResearch.full);
+alert("Research link copied! You can now share it.");
+});
+
+// DOWNLOAD
+downloadBtn.addEventListener("click", () => {
+if(!currentResearch) return;
+window.open(currentResearch.pdf, "_blank");
+});
+
+// READ FULL
+readBtn.addEventListener("click", () => {
+if(!currentResearch) return;
+window.open(currentResearch.full, "_blank");
+});
+
+</script>
+
+</body>
+</html>
