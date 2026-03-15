@@ -1,0 +1,499 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+
+:root {
+    --primary-blue: #1e56b8;
+    --text-white: #ffffff;
+    --card-bg: #ffffff;
+    --font-heading: 'Placard Next Condensed', sans-serif; 
+    --font-body: 'Mont', sans-serif;
+    --footer-icon-size: 65px;
+    --footer-icon-gap: 20px;
+    --footer-icons-right: 277px;
+    --footer-icons-offset-y: 10px;
+    --footer-contact-left: 52%;
+    --footer-contact-top: 59%;
+    --footer-contact-indent: 44px;
+    --footer-contact-gap: 17px;
+    --footer-contact-size: 14px;
+    --footer-contact-weight: 400;
+    --footer-contact-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+* {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none; /* ensure links are not underlined */
+}
+
+p, span, h1, h2, h3, h4, h5, h6 {
+    text-decoration: none; /* prevent headings and paragraphs from being underlined */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    background: url('schl.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--text-white);
+    overflow-x: hidden;
+}
+
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.school-name h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.school-name p {
+    font-size: 0.8rem;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.main-nav a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    margin-left: 25px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+
+.month-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.tab-link {
+    background: none;
+    border: none;
+    color: var(--text-white);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.tab-link.active {
+    opacity: 1;
+    border-bottom: 3px solid white;
+}
+
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px 10%;
+}
+
+.news-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    height: 400px; 
+    overflow: hidden;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image-placeholder {
+    height: 180px;
+    background: #e0e0e0; 
+}
+
+.card-text {
+    text-align: justify;
+    padding: 20px;
+}
+
+.card-text h3 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s; 
+}
+
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 25px;
+    padding: 20px 10%;
+    align-items: stretch; 
+}
+
+.span-two-right {
+    grid-column: 3 / span 2;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.span-two-right .card-image-container {
+    width: 45%;
+    height: 100%;
+}
+
+.span-two-right .card-text {
+    width: 55%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.span-two {
+    grid-column: span 2; 
+    flex-direction: row !important; 
+}
+
+
+.span-two .card-image-container {
+    width: 45%;
+    height: 100%;
+}
+
+.span-two .card-text {
+    flex-grow: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wide-panel-container {
+    padding: 0 10% 20px 10%;
+}
+
+.tab-link.active {
+    opacity: 1;
+    border-bottom: 3px solid white;
+}
+.news-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; 
+    min-height: 400px;
+}
+
+
+.span-two {
+    grid-column: span 2;
+    flex-direction: row; 
+}
+.span-two-centered {
+    grid-column: 2 / span 2; 
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.span-two-centered + .news-card {
+    grid-column-start: 1;
+}
+.span-two .card-image-container {
+    width: 45%; 
+    height: 100%;
+}
+
+.span-two .card-text {
+    width: 55%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+.news-card.span-two .card-text p,
+.news-card.span-two-centered .card-text p,
+.news-card.span-two-right .card-text p {
+  font-size: 1.0rem; 
+  line-height: 1.6;
+}
+
+.news-card.span-two .card-text h3,
+.news-card.span-two-centered .card-text h3,
+.news-card.span-two-right .card-text h3 {
+  font-size: 1.4rem; 
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.card-text {
+    padding: 20px;
+    color: blue; 
+}
+
+.card-text h3 {
+    font-family: 'Mont', sans-serif;
+    font-weight: 900;
+    margin-top: 0;
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
+
+.card-text p {
+    font-family: 'Mont', sans-serif;
+    font-size: 1.0rem;
+    color: #555; 
+}
+
+.wide-panel-container {
+    padding: 20px 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.wide-card {
+    display: flex;
+    flex-direction: row; 
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden; 
+    min-height: 250px; 
+}
+
+.wide-card .card-image-container {
+    width: 35%; 
+    background-color: #f0f0f0; 
+    flex-shrink: 0; 
+}
+
+.wide-card .card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wide-card .card-text {
+    width: 65%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    color: #000;
+}
+
+.wide-card .card-text h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+}
+
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(100%); /* initially hidden */
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* smooth animation */
+}
+.site-footer.is-active {
+  transform: translateY(0); /* slide into view */
+}
+
+  .site-footer .footer-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+
+  .site-footer .footer-icons {
+    position: absolute;
+    right: var(--footer-icons-right);
+    top: 50%;
+    transform: translateY(calc(-50% + var(--footer-icons-offset-y)));
+    display: flex;
+    align-items: center;
+    gap: var(--footer-icon-gap);
+    z-index: 1;
+  }
+
+
+  .site-footer .footer-icons a {
+    width: var(--footer-icon-size);
+    height: var(--footer-icon-size);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .site-footer .footer-icons img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+
+  .site-footer .footer-icons a:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.75);
+    outline-offset: 4px;
+    border-radius: 999px;
+  }
+
+
+  .site-footer .footer-contact {
+    position: absolute;
+    left: var(--footer-contact-left);
+    top: var(--footer-contact-top);
+    transform: translate(-50%, -50%);
+    display: grid;
+    row-gap: var(--footer-contact-gap);
+    padding-left: var(--footer-contact-indent);
+    color: #ffffff;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: var(--footer-contact-size);
+    font-weight: var(--footer-contact-weight);
+    letter-spacing: 0.06em;
+    text-shadow: var(--footer-contact-shadow);
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional: small hover animation for footer icons */
+.footer-icons a {
+    transition: transform 0.3s ease;
+}
+
+.footer-icons a:hover {
+    transform: translateY(-4px);
+}
+
+
+.news-card:not(.span-two):not(.span-two-right):not(.span-two-centered) .card-image-container {
+  height: 180px; 
+  width: 100%;
+}
+
+.news-card:not(.span-two):not(.span-two-right):not(.span-two-centered) .card-image-container img {
+  display: block;     
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.span-two-centered {
+  grid-column: 2 / span 2;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.span-two-centered .card-image-container {
+  width: 45%;
+  height: 100%;
+}
+
+.span-two-centered .card-text {
+  width: 55%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.news-card {
+  transition: transform 0.44s ease, box-shadow 0.18s ease;
+}
+
+.news-card:hover,
+.news-card:focus-within,
+.news-card:active {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+.month-tabs {
+  gap: 16px;
+}
+
+.tab-link {
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(106, 129, 223, 0.45);
+  border: 1px solid rgba(255,255,255,0.35);
+  font-family: "ITC Avant Garde Gothic", "Segoe UI", sans-serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+}
+
+
+.tab-link.active {
+  background: rgba(255,255,255,0.85);
+  color:rgba(106, 129, 223, 0.45);
+  border-color: rgba(255,255,255,0.85);
+  color: #fff;
+  font-family: "ITC Avant Garde Gothic", "Segoe UI", sans-serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
