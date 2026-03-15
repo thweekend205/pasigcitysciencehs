@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pasig City Science High School</title>
+  <link rel="icon" type="image/x-icon" href="utils/images/logo.png">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+
+    @font-face {
+      font-family: "Mont ExtraLight";
+      src: url("fonts/Mont-ExtraLightDEMO.otf") format("opentype");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --header-text: #ffffff;
+      --nav-text: black;
+      --header-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+      --header-padding: 15px 0;
+      --header-padding-scrolled: 12px 0;
+      --nav-gap: 28px;
+      --logo-size: 56px;
+      --hover-line-height: 3px;
+      --hover-line-color: #ffffff;
+      --header-gradient: url("utils/images/scrolled_bg.png");
+      --header-solid-fallback: rgba(10, 28, 58, 0.92);
+      --school-name-font: "ITC Avant Garde Gothic", "Avant Garde Gothic", "Century Gothic", sans-serif;
+      --nav-font: "Placard Next Condensed", "Bebas Neue", "Oswald", sans-serif;
+      --header-side-padding: 64px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display:flex;
+      flex-direction: column;
+      height:100vh;
+      font-family: Arial, sans-serif;
+      background: #1b3a6f;
+      color: #ffffff;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: var(--header-padding);
+      transition: background-color 0.3s ease, background-image 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+      color: var(--header-text);
+    }
+
+    .header-transparent {
+      background-color: transparent;
+      background-image: none;
+      box-shadow: none;
+    }
+
+    .header-scrolled {
+      background-color: var(--header-solid-fallback);
+      background-image: var(--header-gradient);
+      background-size: cover;
+      background-position: center;
+      box-shadow: var(--header-shadow);
+      padding: var(--header-padding-scrolled);
+      --nav-text: #000000;
+      --hover-line-color: #000000;
+    }
+
+    .header-inner {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 0 var(--header-side-padding);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 0 0 auto;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-logo {
+      width: var(--logo-size);
+      height: var(--logo-size);
+      border-radius: 0;
+      overflow: visible;
+      background: transparent;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-name {
+      font-family: var(--school-name-font);
+      line-height: 1.15;
+      text-transform: uppercase;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-name span {
+      display: block;
+    }
+
+    nav {
+      margin-left: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: var(--nav-gap);
+      align-items: center;
+      font-family: var(--nav-font);
+      font-size: 20px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--nav-text);
+    }
+
+    nav a {
+      color: inherit;
+      text-decoration: none;
+      position: relative;
+      padding: 6px 2px 2px;
+      cursor: pointer;
+    }
+
+    nav a::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      left: 0;
+      width: 0%;
+      height: var(--hover-line-height);
+      background: var(--hover-line-color);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::before,
+    nav a:focus-visible::before {
+      width: 100%;
+    }
+
+    nav a:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.6);
+      outline-offset: 6px;
+    }
+
+    .hero {
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 180px 24px 80px;
+    }
+
+    .hero h1 {
+      font-family: var(--school-name-font);
+      font-size: clamp(32px, 5vw, 60px);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .header-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .brand {
+        justify-content: center;
+      }
+
+      .info-card p {
+        font-size: 16px;
+      }
+
+      .info-tile--wide {
+        grid-column: span 1;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .tab-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    iframe{
+      margin-top:80px;
+      flex:1;
+      width:100%;
+      border:none;
+
+      opacity:1;
+      transform:translateY(0);
+      transition:opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    iframe.fade-out{
+      opacity:0;
+      transform:translateY(-40px); /* old page goes up */
+    }
+
+    iframe.fade-in{
+      opacity:0;
+      transform:translateY(40px); /* new page starts below */
+    }
+
+    /* Container for the dropdown */
+    .dropdown {
+      position: relative;
+    }
+
+    /* The actual sub-menu */
+    .dropdown-menu {
+      position: absolute;
+      top: 100%; /* Positions it directly below the parent */
+      left: 0;
+      background: white; /* Or use var(--header-gradient) for consistency */
+      min-width: 160px;
+      display: flex;
+      flex-direction: column;
+      gap: 0 !important; /* Reset nav gap for vertical list */
+      padding: 10px 0;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      border-radius: 4px;
+      
+      /* Initial hidden state */
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      list-style: none;
+    }
+
+    /* Show on hover */
+    .dropdown:hover .dropdown-menu {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Style the sub-links */
+    .dropdown-menu li a {
+      color: #000; /* Dark text for the white background */
+      padding: 10px 20px;
+      display: block;
+      font-size: 18px;
+      letter-spacing: 0.12em;
+      transition: background 0.2s;
+    }
+
+    .dropdown-menu li a:hover {
+      background: #f0f0f0;
+      color: #1b3a6f;
+    }
+
+    /* Remove the top-line hover effect for sub-links to keep it clean */
+    .dropdown-menu li a::before {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="main-header" class="header-scrolled">
+    <div class="header-inner">
+      <a class="brand" href="Homepage Tab/Homepage.html">
+        <div class="brand-logo">
+          <img src="utils/images/logo.png" alt="Pasig City Science High School logo" />
+        </div>
+        <div class="brand-name">
+          <span>Pasig City</span>
+          <span>Science High School</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="About Tab/index.html" target="contentFrame">About</a></li>
+          <li class="dropdown">
+            <a href="#">Academics</a>
+            <ul class="dropdown-menu">
+              <li><a href="Academics Tab/Admission Tab/admission.html" target="contentFrame">Admission</a></li>
+              <li><a href="Academics Tab/Curriculum Tab/curriculum.html" target="contentFrame">Curriculum</a></li>
+            </ul>
+          </li>
+          <li><a href="Organization Tab/index.html" target="contentFrame">Organizations</a></li>
+          <li><a href="Research Tab/index.html" target="contentFrame">Research</a></li>
+          <li><a href="Resources Tab/resources.html" target="contentFrame">Resources</a></li>
+          <li><a href="Updates Tab/mainpage/index.html" target = "contentFrame">Updates</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <iframe id="contentFrame" name="contentFrame"></iframe>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const iframe = document.getElementById("contentFrame");
+      
+      // 1. Get the parameter from the URL bar
+      const urlParams = new URLSearchParams(window.location.search);
+      const pageTarget = urlParams.get('page');
+
+      // 2. Define your mapping (Correct the paths to point to your folders)
+      const pageMap = {
+        'about': 'About Tab/index.html',
+        'aboutHistory': 'About Tab/index.html#history',
+        'aboutStaff': 'About Tab/index.html#staff',
+        'admission': 'Academics Tab/Admission Tab/admission.html',
+        'admissionApply': 'Academics Tab/Admission Tab/admission.html#section-title',
+        'curriculum': 'Academics Tab/Curriculum Tab/curriculum.html',
+        'organization': 'Organization Tab/index.html',
+        'research': 'Research Tab/index.html',
+        'resource': 'Resources Tab/resources.html',
+        'resourceClassList': 'Resources Tab/resources.html#class-list',
+        'resourceMaterials': 'Resources Tab/resources.html#learning-materials',
+        'updates': 'Updates Tab/mainpage/index.html',
+        'updatesNews': 'Updates Tab/feb/feb6/index.html',
+        'updatesAnnouncement': 'Updates Tab/jan/jan1s/index.html'
+      };
+
+      // 3. If a parameter exists, change the iframe immediately
+      if (pageTarget && pageMap[pageTarget]) {
+        iframe.src = pageMap[pageTarget];
+      }
+    });
+
+    // Keep your existing fade-out/fade-in logic below this...
+
+    const links = document.querySelectorAll("nav a[target='contentFrame']");
+    const iframe = document.getElementById("contentFrame");
+
+    links.forEach(link=>{
+      link.addEventListener("click", function(e){
+        e.preventDefault();
+
+        const newPage = this.getAttribute("href");
+
+        iframe.classList.remove("fade-in");
+        iframe.classList.add("fade-out");
+
+        setTimeout(()=>{
+          iframe.classList.remove("fade-out");
+          iframe.classList.add("fade-in");
+          iframe.src = newPage;
+        },350);
+      });
+    });
+
+    iframe.addEventListener("load", ()=>{
+      requestAnimationFrame(()=>{
+        iframe.classList.remove("fade-in");
+      });
+    });
+  </script>
+  <script src='https://cdn.jotfor.ms/agent/embedjs/019cdd31015d743d9ee8fad14d29ef9fc2ac/embed.js'>
+  </script>
+</body>
+</html>
