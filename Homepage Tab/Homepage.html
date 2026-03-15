@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pasig City Science High School</title>
+  <link rel="icon" type="image/x-icon" href="../utils/images/logo.png">
+  <style>
+
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+
+
+  :root {
+    --footer-icon-size: 65px;
+    --footer-icon-gap: 20px;
+    --footer-icons-right: 277px;
+    --footer-icons-offset-y: 10px;
+    --footer-contact-left: 52%;
+    --footer-contact-top: 59%;
+    --footer-contact-indent: 44px;
+    --footer-contact-gap: 17px;
+    --footer-contact-size: 14px;
+    --footer-contact-weight: 400;
+    --footer-contact-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+
+  .site-footer {
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+
+  .site-footer .footer-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+
+  .site-footer .footer-icons {
+    position: absolute;
+    right: var(--footer-icons-right);
+    top: 50%;
+    transform: translateY(calc(-50% + var(--footer-icons-offset-y)));
+    display: flex;
+    align-items: center;
+    gap: var(--footer-icon-gap);
+    z-index: 1;
+  }
+
+
+  .site-footer .footer-icons a {
+    width: var(--footer-icon-size);
+    height: var(--footer-icon-size);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .site-footer .footer-icons img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+
+  .site-footer .footer-icons a:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.75);
+    outline-offset: 4px;
+    border-radius: 999px;
+  }
+
+
+  .site-footer .footer-contact {
+    position: absolute;
+    left: var(--footer-contact-left);
+    top: var(--footer-contact-top);
+    transform: translate(-50%, -50%);
+    display: grid;
+    row-gap: var(--footer-contact-gap);
+    padding-left: var(--footer-contact-indent);
+    color: #ffffff;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: var(--footer-contact-size);
+    font-weight: var(--footer-contact-weight);
+    letter-spacing: 0.06em;
+    text-shadow: var(--footer-contact-shadow);
+  }
+    
+
+    /* ------------------------------------------------------------------------------------------------------------------------------- */
+
+    @font-face {
+      font-family: "Placard Next Condensed";
+      src: url("fonts/PlacardNextCondRg.TTF") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Mont ExtraLight";
+      src: url("fonts/Mont-ExtraLightDEMO.otf") format("opentype");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --header-text: #ffffff;
+      --nav-text: #ffffff;
+      --header-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+      --header-padding: 15px 0;
+      --header-padding-scrolled: 12px 0;
+      --nav-gap: 28px;
+      --logo-size: 56px;
+      --hover-line-height: 3px;
+      --hover-line-color: #ffffff;
+      --header-gradient: url("images/scrolled_bg.png");
+      --header-solid-fallback: rgba(10, 28, 58, 0.92);
+      --school-name-font: "ITC Avant Garde Gothic", "Avant Garde Gothic", "Century Gothic", sans-serif;
+      --nav-font: "Placard Next Condensed", "Bebas Neue", "Oswald", sans-serif;
+      --header-side-padding: 64px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      min-height: 100vh;
+      position: relative;
+      background: #0b1e36;
+    }
+
+    .hero-video {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: var(--header-padding);
+      transition: background-color 0.3s ease, background-image 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+      color: var(--header-text);
+    }
+
+    .header-transparent {
+      background-color: transparent;
+      background-image: none;
+      box-shadow: none;
+    }
+
+    .header-scrolled {
+      background-color: var(--header-solid-fallback);
+      background-image: var(--header-gradient);
+      background-size: cover;
+      background-position: center;
+      box-shadow: var(--header-shadow);
+      padding: var(--header-padding-scrolled);
+      --nav-text: #000000;
+      --hover-line-color: #000000;
+    }
+
+    .header-inner {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 0 var(--header-side-padding);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 0 0 auto;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-logo {
+      width: var(--logo-size);
+      height: var(--logo-size);
+      border-radius: 0;
+      overflow: visible;
+      background: transparent;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-name {
+      font-family: var(--school-name-font);
+      line-height: 1.15;
+      text-transform: uppercase;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-name span {
+      display: block;
+    }
+
+    nav {
+      margin-left: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: var(--nav-gap);
+      align-items: center;
+      font-family: var(--nav-font);
+      font-size: 20px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--nav-text);
+    }
+
+    nav a {
+      color: inherit;
+      text-decoration: none;
+      position: relative;
+      padding: 6px 2px 2px;
+      cursor: pointer;
+    }
+
+    nav a::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      left: 0;
+      width: 0%;
+      height: var(--hover-line-height);
+      background: var(--hover-line-color);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::before,
+    nav a:focus-visible::before {
+      width: 100%;
+    }
+
+    nav a:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.6);
+      outline-offset: 6px;
+    }
+
+    .hero-panel {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-image: url("images/homepage_bg.png");
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 180px 24px 80px;
+    }
+
+    .main-scroll {
+      position: relative;
+      z-index: 3;
+      margin-top: 100vh;
+    }
+
+    .info-panel {
+      background: #f4f6fb;
+      color: #0b1e36;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 8vw;
+      text-align: center;
+    }
+
+    .info-card {
+      max-width: 900px;
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .info-card.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .info-card h2 {
+      font-family: var(--school-name-font);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: clamp(28px, 4vw, 52px);
+      margin-top: 24px;
+      margin-bottom: 18px;
+    }
+
+    .info-card p {
+      font-family: "Mont ExtraLight", "ITC Avant Garde Gothic", "Century Gothic", sans-serif;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.75;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .tabs-panel {
+      background: #ffffff;
+      color: #0b1e36;
+      padding: 90px 8vw 120px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-kicker {
+      font-family: var(--nav-font);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgba(11, 30, 54, 0.55);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--school-name-font);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: clamp(28px, 4vw, 48px);
+      margin-bottom: 16px;
+    }
+
+    .tab-group {
+      padding: 36px 0;
+    }
+
+    .tab-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 32px;
+      padding: 36px 0;
+      align-items: start;
+    }
+
+    .tab-row .tab-group {
+      padding: 0;
+    }
+
+    .tab-title {
+      font-family: var(--school-name-font);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 24px;
+      color: #0b1e36;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .info-tile {
+      background: #f4f6fb;
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      box-shadow: 0 14px 28px rgba(15, 37, 70, 0.08);
+    }
+
+    .info-tile--wide {
+      grid-column: span 2;
+    }
+
+    .tile-media {
+      height: clamp(210px, 32vh, 340px);
+      background: linear-gradient(135deg, rgba(12, 40, 82, 0.9), rgba(72, 132, 210, 0.85));
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .tile-media.has-image {
+      background: transparent;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .tile-media.has-image::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 55%;
+      background: linear-gradient(to top, rgba(8, 18, 34, 0.55), rgba(8, 18, 34, 0));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .tile-media.has-image:hover::after,
+    .tile-media.has-image:focus-visible::after {
+      opacity: 1;
+    }
+
+    .tile-caption {
+      position: absolute;
+      left: 14px;
+      bottom: 12px;
+      font-size: 11px;
+      color: #ffffff;
+      letter-spacing: 0.08em;
+      text-transform: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .tile-media.has-image:hover .tile-caption,
+    .tile-media.has-image:focus-visible .tile-caption {
+      opacity: 1;
+    }
+
+    .tile-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .tile-media--tall {
+      height: clamp(310px, 40vh, 440px);
+    }
+
+    .tile-media--xl {
+      height: clamp(300px, 41vh, 430px);
+    }
+
+    .tile-media.is-hidden {
+      display: none;
+    }
+
+    .info-tile.no-media .tile-body {
+      padding-top: 28px;
+    }
+
+    .tile-body {
+      padding: 18px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .tile-title {
+      font-family: var(--school-name-font);
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #0b1e36;
+    }
+
+    .tile-text {
+      font-family: "Mont ExtraLight", "ITC Avant Garde Gothic", "Century Gothic", sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(11, 30, 54, 0.75);
+    }
+
+    .tile-link {
+      font-family: var(--nav-font);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      font-weight: 400;
+      color: #0b1e36;
+      text-decoration: none;
+      margin-top: auto;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 4px;
+      cursor: pointer;
+    }
+
+    .tile-link::after {
+      content: " →";
+    }
+
+    .tile-link::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 1px;
+      width: 0%;
+      height: 2px;
+      background: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    .tile-link:hover::before,
+    .tile-link:focus-visible::before {
+      width: 100%;
+    }
+
+    .footer-overlay {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: auto;
+      display: block;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .footer-overlay.is-hidden {
+      opacity: 0;
+    }
+
+    .footer-cta {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #ffffff;
+      font-family: var(--school-name-font);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 2px;
+      pointer-events: auto;
+    }
+
+    .footer-cta img {
+      width: 14px;
+      height: 14px;
+      display: block;
+    }
+
+    .footer-cta.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @media (max-width: 900px) {
+      .header-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .brand {
+        justify-content: center;
+      }
+
+      .info-card p {
+        font-size: 16px;
+      }
+
+      .info-tile--wide {
+        grid-column: span 1;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .tab-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    /* The actual sub-menu */
+    .dropdown-menu {
+      position: absolute;
+      top: 100%; /* Positions it directly below the parent */
+      left: 0;
+      background: white; /* Or use var(--header-gradient) for consistency */
+      min-width: 160px;
+      display: flex;
+      flex-direction: column;
+      gap: 0 !important; /* Reset nav gap for vertical list */
+      padding: 10px 0;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      border-radius: 4px;
+      
+      /* Initial hidden state */
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      list-style: none;
+    }
+
+    /* Show on hover */
+    .dropdown:hover .dropdown-menu {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Style the sub-links */
+    .dropdown-menu li a {
+      color: #000; /* Dark text for the white background */
+      padding: 10px 20px;
+      display: block;
+      font-size: 18px;
+      letter-spacing: 0.12em;
+      transition: background 0.2s;
+    }
+
+    .dropdown-menu li a:hover {
+      background: #f0f0f0;
+      color: #1b3a6f;
+    }
+
+    /* Remove the top-line hover effect for sub-links to keep it clean */
+    .dropdown-menu li a::before {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="../utils/video/vid.mp4" type="video/mp4" />
+  </video>
+  <header id="main-header" class="header-transparent">
+    <div class="header-inner">
+      <a class="brand" href="Homepage.html">
+        <div class="brand-logo">
+          <img src="images/logo.png" alt="Pasig City Science High School logo" />
+        </div>
+        <div class="brand-name">
+          <span>Pasig City</span>
+          <span>Science High School</span>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="../PCSHS WEBSITE.html?page=about" target="_top">About</a></li>
+          <li class="dropdown">
+            <a>Academics</a>
+            <ul class="dropdown-menu">
+              <li><a href="../PCSHS WEBSITE.html?page=admission" target="_top">Admission</a></li>
+              <li><a href="../PCSHS WEBSITE.html?page=curriculum" target="_top">Curriculum</a></li>
+            </ul>
+          </li>
+          <li><a href="../PCSHS WEBSITE.html?page=organization" target="_top">Organizations</a></li>
+          <li><a href="../PCSHS WEBSITE.html?page=research" target="_top">Research</a></li>
+          <li><a href="../PCSHS WEBSITE.html?page=resource" target="_top">Resources</a></li>
+          <li><a href="../PCSHS WEBSITE.html?page=updates" target="_top">Updates</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-panel hero"></section>
+  <main class="main-scroll">
+    <section id="science" class="info-panel">
+      <div class="info-card">
+        <h2>The Science of Excellence</h2>
+        <p>
+          At Pasig City Science High School, education is guided by a vision of
+          becoming a world-class institution that is globally and locally competitive,
+          especially in the fields of Science and Technology. The school is committed
+          to developing well-rounded, science-oriented students who are nurtured to
+          become gender-sensitive individuals and future leaders with a vision for
+          excellence.
+        </p>
+        <br>
+        <p>
+          Through scholarship opportunities for deserving gifted students, a high-quality
+          curriculum enriched with Science and Technology, and learning experiences that
+          develop critical and creative thinking, PCSHS continues to prepare learners to
+          meet the ever-changing needs of the times.
+        </p>
+      </div>
+    </section>
+    <section id="explore" class="tabs-panel">
+      <div class="section-header">
+        <div class="section-kicker">Discover</div>
+        <h2 class="section-title">Explore PCSHS</h2>
+      </div>
+
+      <div class="tab-group">
+        <h3 class="tab-title">About</h3>
+        <div class="card-grid">
+          <article class="info-tile">
+            <div class="tile-media has-image">
+              <img src="images/campus_history.png" alt="Campus history" />
+            </div>
+            <div class="tile-body">
+              <div class="tile-title">History</div>
+              <div class="tile-text">
+                Learn about the roots of excellence, service, and leadership through the
+                establishment of Pasig City Science High School.
+              </div>
+              <a class="tile-link" href="../PCSHS WEBSITE.html?page=aboutHistory" target="_self">Read more</a>
+            </div>
+          </article>
+          <article class="info-tile">
+            <div class="tile-media has-image">
+              <img src="images/faculty_portrait.png" alt="Administration and staff" />
+            </div>
+            <div class="tile-body">
+              <div class="tile-title">Administration & Staff</div>
+              <div class="tile-text">
+                Meet the teaching and non-teaching personnel who hone the curious and
+                intelligent minds of PaScians.
+              </div> 
+              <a class="tile-link" href="../PCSHS WEBSITE.html?page=aboutStaff" target="_self">Meet the team</a>
+            </div>
+          </article>
+          <article class="info-tile">
+            <div class="tile-media has-image">
+              <img src="images/student_handbook.png" alt="Student handbook" />
+            </div>
+            <div class="tile-body">
+              <div class="tile-title">Rules & Policies</div>
+              <div class="tile-text">
+                Observe proper conduct and demonstrate etiquette in accordance with the
+                school rules and policies.
+              </div>
+              <a class="tile-link" href="../PCSHS WEBSITE.html?page=admission" target="_self">View policies</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="tab-group">
+        <h3 class="tab-title">Academics</h3>
+        <div class="card-grid">
+          <article class="info-tile info-tile--wide">
+            <div class="tile-media tile-media--tall has-image">
+              <img src="images/classroom_learning.png" alt="Classroom learning" />
+            </div>
+            <div class="tile-body">
+              <div class="tile-title">Curriculum</div>
+              <div class="tile-text">
+                View the subjects offered by the school, aligned with those of the
+                Philippine Science High School system.
+              </div>
+              <a class="tile-link"  href="../PCSHS WEBSITE.html?page=curriculum" target="_self">Explore curriculum</a>
+            </div>
+          </article>
+          <article class="info-tile">
+            <div class="tile-media is-hidden"></div>
+            <div class="tile-body">
+              <div class="tile-title">Admissions</div>
+              <div class="tile-text">
+                Learn when and how one may become a student of this prestigious,
+                science-centered institution.
+              </div>
+              <a class="tile-link"  href="../PCSHS WEBSITE.html?page=admissionApply" target="_self">Apply now</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="tab-row">
+        <div class="tab-group">
+          <h3 class="tab-title">Organizations</h3>
+          <div class="card-grid">
+          <article class="info-tile info-tile--wide">
+            <div class="tile-media tile-media--xl has-image">
+              <img src="images/student_organizations.png" alt="Student organizations" />
+            </div>
+            <div class="tile-body">
+              <div class="tile-title">Co-curricular Life</div>
+                <div class="tile-text">
+                  Discover how PaScians build connections, strengthen camaraderie, and gain
+                  knowledge and experience beyond academics through clubs and organizations.
+                </div>
+                <a class="tile-link" href="../PCSHS WEBSITE.html?page=organization" target="_self">See organizations</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-group">
+          <h3 class="tab-title">Research</h3>
+          <div class="card-grid">
+          <article class="info-tile info-tile--wide">
+            <div class="tile-media tile-media--xl has-image">
+              <img src="images/research_lab.png" alt="Research lab" />
+            </div>
+            <div class="tile-body">
+              <div class="tile-title">Inquiry & Innovation</div>
+                <div class="tile-text">
+                  Explore how the curious minds of the institution discover solutions and
+                  contribute to knowledge in the sciences of life, technology, and physicality.
+                </div>
+                <a class="tile-link" href="../PCSHS WEBSITE.html?page=research" target="_self">View research</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-group">
+        <h3 class="tab-title">Resources</h3>
+        <div class="card-grid">
+          <article class="info-tile no-media">
+            <div class="tile-media is-hidden"></div>
+            <div class="tile-body">
+              <div class="tile-title">Class List</div>
+              <div class="tile-text">
+                View where each PaScian belongs for the School Year 2025–2026.
+              </div>
+              <a class="tile-link" href="../PCSHS WEBSITE.html?page=resourceClassList" target="_self">Open list</a>
+            </div>
+          </article>
+          <article class="info-tile no-media">
+            <div class="tile-media is-hidden"></div>
+            <div class="tile-body">
+              <div class="tile-title">Learning Resources</div>
+              <div class="tile-text">
+                Delve into references and sources that support the world-class education
+                imparted to PaScians.
+              </div>
+              <a class="tile-link" href="../PCSHS WEBSITE.html?page=resourceMaterials" target="_self">Browse resources</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="tab-group">
+        <h3 class="tab-title">Updates</h3>
+        <div class="card-grid">
+          <article class="info-tile">
+            <div class="tile-media has-image">
+              <img src="images/announcements.png" alt="Announcements" />
+            </div>
+            <div class="tile-body">
+              <div class="tile-title">Announcements</div>
+              <div class="tile-text">
+                Stay informed about important information or changes.
+              </div>
+              <a class="tile-link" href="../PCSHS WEBSITE.html?page=updatesAnnouncement" target="_self">View announcements</a>
+            </div>
+          </article>
+          <article class="info-tile">
+            <div class="tile-media has-image">
+              <img src="images/news.jpg" alt="News" />
+              <span class="tile-caption">Facebook: Filming Pascian Stories</span>
+            </div>
+            <div class="tile-body">
+              <div class="tile-title">News</div>
+              <div class="tile-text">
+                Be informed about notable and significant developments or stories related
+                to Pasig City Science High School.
+              </div>
+              <a class="tile-link" href="../PCSHS WEBSITE.html?page=updatesNews" target="_self">Read news</a>
+            </div>
+          </article>
+          <article class="info-tile">
+            <div class="tile-media has-image">
+              <img src="images/events.jpg" alt="Events" />
+            </div>
+            <div class="tile-body">
+              <div class="tile-title">Events</div>
+              <div class="tile-text">
+                Promote or revisit scheduled activities.
+              </div>
+              <a class="tile-link" href="../PCSHS WEBSITE.html?page=updates" target="_self">See events</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <img class="footer-overlay" src="images/homepage_footer.png" alt="" />
+  <a class="footer-cta" href="#science">
+    Explore PCSHS
+    <img src="images/search_symbol.png" alt="" />
+  </a>
+
+  <script>
+
+    const infoCard = document.querySelector(".info-card");
+
+    window.addEventListener("scroll", () => {
+      const header = document.getElementById("main-header");
+      const footerOverlay = document.querySelector(".footer-overlay");
+      const exploreCta = document.querySelector(".footer-cta");
+      const revealPoint = window.innerHeight * 0.885;
+      if (window.pageYOffset > revealPoint) {
+        header.classList.add("header-scrolled");
+        header.classList.remove("header-transparent");
+      } else {
+        header.classList.add("header-transparent");
+        header.classList.remove("header-scrolled");
+      }
+
+      if (exploreCta) {
+        const hidePoint = window.innerHeight * 0.75;
+        if (window.pageYOffset > hidePoint) {
+          exploreCta.classList.add("is-hidden");
+          if (footerOverlay) {
+            footerOverlay.classList.add("is-hidden");
+          }
+        } else {
+          exploreCta.classList.remove("is-hidden");
+          if (footerOverlay) {
+            footerOverlay.classList.remove("is-hidden");
+          }
+        }
+      }
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      { root: null, threshold: 0.35 }
+    );
+
+    observer.observe(infoCard);
+  </script>
+</body>
+
+<footer class="site-footer">
+  <img class="footer-bg" src="images/footer.png" alt="" />
+  <div class="footer-contact">
+    <div>628-2177 / 628-2226 / 286282177</div>
+    <div>pasigcitysciencehs05@gmail.com</div>
+  </div>
+  <div class="footer-icons">
+    <a href="https://www.facebook.com/pcshs.edu" aria-label="PCSHS Facebook page" target="_blank" rel="noopener noreferrer">
+      <img src="images/fb_logo.png" alt="" />
+    </a>
+    <a href="https://www.facebook.com/sslgpasigsci" aria-label="SSLG Facebook page" target="_blank" rel="noopener noreferrer">
+      <img src="images/sslg_logo.png" alt="" />
+    </a>
+  </div>
+</footer> 
+  <script src='https://cdn.jotfor.ms/agent/embedjs/019cdd31015d743d9ee8fad14d29ef9fc2ac/embed.js'>
+  </script>
+</html>
