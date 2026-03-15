@@ -193,7 +193,7 @@ const organizationData = {
   ],
   extraCurricular: [
     {
-      name: "Fermata Poscians",
+      name: "Fermata Pascians",
       logo: "../utils/images/fermata_logo.png",
       link: "https://www.facebook.com/FermataPascians",
       tag: "Music",
