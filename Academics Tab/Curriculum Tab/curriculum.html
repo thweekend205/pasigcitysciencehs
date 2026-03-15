@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Curriculums | Pasig City Science High School</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700&display=swap");
+
+      :root {
+        --blue-900: #0a2a66;
+        --blue-800: #0f377e;
+        --blue-700: #13448d;
+        --blue-600: #1b59a8;
+        --gold-500: #f2c319;
+        --gold-600: #d7a90f;
+        --white: #ffffff;
+        --ink: #0f1b2d;
+        --slate: #2d3a4f;
+        --shadow: 0 20px 50px rgba(3, 15, 35, 0.35);
+        --radius-lg: 22px;
+        --radius-md: 16px;
+        --footer-icon-size: 65px;
+        --footer-icon-gap: 20px;
+        --footer-icons-right: 277px;
+        --footer-icons-offset-y: 10px;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", system-ui, sans-serif;
+        color: var(--ink);
+        background: #eef2f7;
+      }
+
+      .topbar {
+        background: linear-gradient(90deg, #0a2a66, #1b4d9c);
+        color: var(--white);
+        padding: 14px 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        font-size: 14px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 30% 30%, #f2c319, #c68f12);
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        box-shadow: inset 0 0 0 4px rgba(11, 36, 82, 0.6);
+      }
+
+      .nav {
+        display: flex;
+        gap: 22px;
+        font-size: 12px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        opacity: 0.9;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 5px;
+        padding: 10px 14px 20px;
+        margin-bottom: 0px;
+        color: var(--white);
+        background: linear-gradient(180deg, rgba(7, 22, 50, 0.85), rgba(7, 22, 50, 0.6)),
+          url("sci.jpg") center/cover no-repeat;
+      }
+
+      .hero-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .hero-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(42px, 6vw, 70px);
+        letter-spacing: 0.08em;
+        margin: 0;
+      }
+
+      .section { padding-top: 0; }
+
+      .section-bar {
+        margin: 0 auto 28px;
+        max-width: 100%;
+        background: var(--blue-900);
+        color: var(--gold-500);
+        padding: 14px 20px;
+        border-radius: 0px;
+        text-align: center;
+        font-family: "Bebas Neue", sans-serif;
+        letter-spacing: 0.1em;
+        font-size: 40px;
+        position: relative;
+      }
+
+      .section-bar.full-width-bar {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+        position: relative;
+        z-index: 3;
+      }
+.jhs-blue {
+  position: relative;
+  padding: 0 0 50px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0a2a66 0%, #143b8f 100%);
+}
+.jhs-blue::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.22) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 1;
+}
+.jhs-light-block {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  background: #143b8f;
+  z-index: 2;
+  content: none;
+}
+
+.jhs-slider {
+  position: relative;
+  z-index: 2;
+}
+
+.content-70 {
+  position: relative;
+  z-index: 3;
+  padding-top: 24px;
+  width: min(70vw, 1180px);
+  margin: 0 auto;
+}
+
+     .card {
+        background: var(--white);
+         border-radius: var(--radius-lg);
+         padding: 18px 16px 20px;
+         box-shadow: none; /* removed */
+         border: 3px solid #103574;
+         min-width: 280px;
+        }
+
+      .card h3 {
+        margin: 0 0 12px;
+        text-align: center;
+        color: var(--blue-900);
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 28px;
+        letter-spacing: 0.1em;
+      }
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+
+      .table th,
+      .table td {
+        border: 1px solid #2b2b2b;
+        padding: 6px 8px;
+        vertical-align: top;
+      }
+
+      .table th {
+        background: #f0f3f8;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+      }
+
+      .table .subhead {
+        background: #f8f9fc;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 11px;
+      }
+
+      .notes {
+        margin-top: 10px;
+        font-size: 12px;
+        line-height: 1.4;
+        color: #1e2d45;
+        font-weight: 600;
+        text-align: center;
+      }
+.band-gold {
+  background: #f2c319;
+  padding: 0 0 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.band-gold::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.45) 2px, transparent 2px);
+  background-size: 16px 16px;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shs-light-block {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  background: #f7d45a;
+  z-index: 2;
+}
+
+.band-gold .content-70 {
+  position: relative;
+  z-index: 3;
+  padding-top: 24px;
+}
+
+.band-gold .section-bar.full-width-bar {
+  position: relative;
+  z-index: 4;
+  background: #f2c319;
+  color: #0a2a66;
+}
+
+      .slider-track {
+        display: flex;
+        gap: 22px;
+        overflow: hidden;
+        scroll-behavior: smooth;
+      }
+
+      .arrow-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid #ffffff;
+        background: rgba(11, 36, 82, 0.9);
+        color: #ffffff;
+        font-size: 24px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        z-index: 2;
+      }
+
+      .arrow-left { left: -52px; }
+      .arrow-right { right: -52px; }
+
+      .grid-2 {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      @media (max-width: 980px) {
+        .content-70 { width: min(92vw, 1180px); }
+        .arrow-left, .arrow-right { display: none; }
+        .slider-track { overflow-x: auto; padding-bottom: 6px; }
+      }
+
+      @media (max-width: 900px) {
+        .grid-2 { grid-template-columns: 1fr; }
+      }
+
+      @media (max-width: 720px) {
+        .nav { display: none; }
+        .hero { padding-bottom: 40px; }
+        .card { padding: 14px 12px 16px; }
+      }
+      .site-footer {
+        /* Change relative to fixed */
+        position: fixed; 
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        flex-shrink: 0;
+        padding: 0px;
+        margin: 0px;
+        z-index: 1000; /* Ensure it stays above other content */
+
+        /* Initial state: Hidden below the bottom edge */
+        transform: translateY(100%);
+        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+
+      /* This class will be added by JavaScript when near the bottom */
+      .site-footer.is-active {
+        transform: translateY(0);
+      }
+
+      /* Keep your existing internal styles exactly as they are */
+      .site-footer .footer-bg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .site-footer .footer-icons {
+        position: absolute;
+        right: var(--footer-icons-right);
+        top: 50%;
+        transform: translateY(calc(-50% + var(--footer-icons-offset-y)));
+        display: flex;
+        align-items: center;
+        gap: var(--footer-icon-gap);
+        z-index: 1;
+      }
+
+      /* ... (rest of your icon CSS remains the same) */
+
+      .site-footer .footer-icons a {
+        width: var(--footer-icon-size);
+        height: var(--footer-icon-size);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .site-footer .footer-icons img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .site-footer .footer-icons a:focus-visible {
+        outline: 3px solid rgba(255, 255, 255, 0.75);
+        outline-offset: 4px;
+        border-radius: 999px;
+      }
+
+      #footer-trigger {
+        background: #f2c319;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1 class="hero-title">CURRICULUMS</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-bar full-width-bar">JUNIOR HIGH SCHOOL</div>
+
+      <div class="jhs-blue">
+        <div class="jhs-light-block"></div>
+
+        <div class="content-70">
+          <div class="jhs-slider">
+            <button class="arrow-btn arrow-left" aria-label="Previous">&#8249;</button>
+            <button class="arrow-btn arrow-right" aria-label="Next">&#8250;</button>
+
+            <div class="slider-track" id="jhsTrack">
+              <!-- Grade 7 -->
+              <article class="card">
+                <h3>GRADE 7</h3>
+                <table class="table">
+                  <tr><th>Core Subjects</th><th>MTGS</th></tr>
+                  <tr><td>Asian History</td><td>4</td></tr>
+                  <tr><td>English 7</td><td>4</td></tr>
+                  <tr><td>Filipino 7</td><td>4</td></tr>
+                  <tr><td>MAPEH 7</td><td>4</td></tr>
+                  <tr><td>Mathematics 7</td><td>5</td></tr>
+                  <tr><td>Science 7</td><td>5</td></tr>
+                  <tr><td>Values Education 7</td><td>4</td></tr>
+                  <tr><td class="subhead">Advanced Subjects</td><td class="subhead">MTGS</td></tr>
+                  <tr><td>Research 1</td><td>3</td></tr>
+                  <tr><td>Elective 1: Creative Technology 7</td><td>2</td></tr>
+                  <tr><td>Elective 2: Environmental Science</td><td>2</td></tr>
+                  <tr><td>Elective 3: Supplementary Elementary Algebra</td><td>2</td></tr>
+                  <tr><td>Homeroom</td><td>1</td></tr>
+                </table>
+                <div class="notes">Total Hours/Week: 39.18<br />Total Hours/Day: 7.67 – 8.5<br />Classes End at 2:40PM or 3:30PM</div>
+              </article>
+
+              <!-- Grade 8 -->
+              <article class="card">
+                <h3>GRADE 8</h3>
+                <table class="table">
+                  <tr><th>Core Subjects</th><th>MTGS</th></tr>
+                  <tr><td>World History</td><td>4</td></tr>
+                  <tr><td>English 8</td><td>4</td></tr>
+                  <tr><td>Filipino 8</td><td>4</td></tr>
+                  <tr><td>MAPEH 8</td><td>4</td></tr>
+                  <tr><td>Mathematics 8</td><td>5</td></tr>
+                  <tr><td>Science 8</td><td>5</td></tr>
+                  <tr><td>Values Education 8</td><td>4</td></tr>
+                  <tr><td class="subhead">Advanced Subjects</td><td class="subhead">MTGS</td></tr>
+                  <tr><td>Research 2</td><td>3</td></tr>
+                  <tr><td>Elective 1: Advanced Algebra</td><td>2</td></tr>
+                  <tr><td>Elective 2: Bio Technology</td><td>2</td></tr>
+                  <tr><td>Elective 3: Creative Technology 8</td><td>2</td></tr>
+                  <tr><td>Homeroom</td><td>1</td></tr>
+                </table>
+                <div class="notes">Total Hours/Week: 39.18<br />Total Hours/Day: 7.67 – 8.5<br />Classes End at 2:40PM or 3:30PM</div>
+              </article>
+
+              <!-- Grade 9 -->
+              <article class="card">
+                <h3>GRADE 9</h3>
+                <table class="table">
+                  <tr><th>Core Subjects</th><th>MTGS</th></tr>
+                  <tr><td>Economics</td><td>4</td></tr>
+                  <tr><td>English 9</td><td>4</td></tr>
+                  <tr><td>Filipino 9</td><td>4</td></tr>
+                  <tr><td>MAPEH 9</td><td>4</td></tr>
+                  <tr><td>Mathematics 9</td><td>5</td></tr>
+                  <tr><td>Science 9</td><td>5</td></tr>
+                  <tr><td>EsP 9</td><td>3</td></tr>
+                  <tr><td class="subhead">Advanced Subjects</td><td class="subhead">MTGS</td></tr>
+                  <tr><td>Research 3</td><td>3</td></tr>
+                  <tr><td>Elective 1: Creative Technology 9</td><td>3</td></tr>
+                  <tr><td>Elective 2: Consumer Chemistry</td><td>2</td></tr>
+                  <tr><td>Elective 3: Geometry</td><td>2</td></tr>
+                  <tr><td>Elective 4: Electromagnetism / Mandarin I / Spanish I/ Nihongo I </td><td>2</td></tr>
+                  <tr><td>Homeroom</td><td>1</td></tr>
+                </table>
+                <div class="notes">Total Hours/Week: 40.01<br />Total Hours/Day: 7.67 – 8.5<br />Classes End at 2:40PM or 3:30PM</div>
+              </article>
+
+              <!-- Grade 10 -->
+              <article class="card">
+                <h3>GRADE 10</h3>
+                <table class="table">
+                  <tr><th>Core Subjects</th><th>MTGS</th></tr>
+                  <tr><td>Contemporary Issues</td><td>4</td></tr>
+                  <tr><td>English 10</td><td>4</td></tr>
+                  <tr><td>Filipino 10</td><td>4</td></tr>
+                  <tr><td>MAPEH 10</td><td>4</td></tr>
+                  <tr><td>Mathematics 10</td><td>5</td></tr>
+                  <tr><td>Science 10</td><td>5</td></tr>
+                  <tr><td>EsP 10</td><td>3</td></tr>
+                  <tr><td class="subhead">Advanced Subjects</td><td class="subhead">MTGS</td></tr>
+                  <tr><td>Research 4</td><td>3</td></tr>
+                  <tr><td>Elective 1: Creative Technology 10</td><td>3</td></tr>
+                  <tr><td>Elective 2: Advanced Physics</td><td>2</td></tr>
+                  <tr><td>Elective 3: Trigonometry</td><td>2</td></tr>
+                  <tr><td>Elective 4: Human Anatomy / Mandarin II / Spanish II</td><td>2</td></tr>
+                  <tr><td>Homeroom</td><td>1</td></tr>
+                </table>
+                <div class="notes">Total Hours/Week: 40.01 <br />Total Hours/Day: 7.67 – 8.5<br />Classes End at 2:40PM or 3:30PM</div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section class="band-gold">
+  <div class="section-bar full-width-bar">SENIOR HIGH SCHOOL</div>
+  <div class="shs-light-block"></div>
+  <div class="content-70">
+    <div class="grid-2">
+          <article class="card">
+            <h3>GRADE 11</h3>
+            <table class="table">
+              <tr><th colspan="2">First Semester</th></tr>
+              <tr><td class="subhead">Core Subjects</td><td class="subhead">MTGS</td></tr>
+              <tr><td>Reading and Writing Skills</td><td>4</td></tr>
+              <tr><td>Statistics and Probability</td><td>4</td></tr>
+              <tr><td>Komunikasyon at Pananaliksik sa Wika at Kultura</td><td>4</td></tr>
+              <tr><td>Earth and Life Science</td><td>4</td></tr>
+              <tr><td>HOPE 1</td><td>1</td></tr>
+              <tr><td class="subhead">Specialized Subjects</td><td class="subhead">MTGS</td></tr>
+              <tr><td>General Chemistry 1</td><td>4</td></tr>
+              <tr><td>Pre-Calculus</td><td>4</td></tr>
+              <tr><td>Practical Research 1</td><td>4</td></tr>
+              <tr><td>Homeroom</td><td>1</td></tr>
+
+              <tr><th colspan="2">Second Semester</th></tr>
+              <tr><td class="subhead">Core Subjects</td><td class="subhead">MTGS</td></tr>
+              <tr><td>21st Century Literature from the Philippines and the World</td><td>4</td></tr>
+              <tr><td>General Mathematics</td><td>4</td></tr>
+              <tr><td>Filipino sa Piling Larangan - Akademik</td><td>4</td></tr>
+              <tr><td>Disaster Readiness and Risk Reduction</td><td>4</td></tr>
+              <tr><td>HOPE 2</td><td>1</td></tr>
+              <tr><td class="subhead">Specialized Subjects</td><td class="subhead">MTGS</td></tr>
+              <tr><td>General Chemistry 2</td><td>4</td></tr>
+              <tr><td>Basic Calculus</td><td>4</td></tr>
+              <tr><td>Practical Research 2</td><td>4</td></tr>
+              <tr><td>Homeroom</td><td>1</td></tr>
+            </table>
+            <div class="notes">Total Hours/Week: 39<br />Total Hours/Day: 7–8<br />Classes End at 2:00PM or 3:00PM</div>
+          </article>
+
+          <article class="card">
+            <h3>GRADE 12</h3>
+            <table class="table">
+              <tr><th colspan="2">First Semester</th></tr>
+              <tr><td class="subhead">Core Subjects</td><td class="subhead">MTGS</td></tr>
+              <tr><td>Oral Communication</td><td>4</td></tr>
+              <tr><td>Media and Information Literacy</td><td>4</td></tr>
+              <tr><td>Filipino 12</td><td>4</td></tr>
+              <tr><td>Personal Development</td><td>4</td></tr>
+              <tr><td>HOPE 3</td><td>1</td></tr>
+              <tr><td class="subhead">Specialized Subjects</td><td class="subhead">MTGS</td></tr>
+              <tr><td>General Biology 1</td><td>4</td></tr>
+              <tr><td>General Physics 1</td><td>4</td></tr>
+              <tr><td>Inquiries, Investigation, and Immersion (I3)</td><td>4</td></tr>
+              <tr><td>Homeroom</td><td>1</td></tr>
+
+              <tr><th colspan="2">Second Semester</th></tr>
+              <tr><td class="subhead">Core Subjects</td><td class="subhead">MTGS</td></tr>
+              <tr><td>English for Academic and Professional Purposes</td><td>4</td></tr>
+              <tr><td>Contemporary Philippine Arts from the Regions</td><td>4</td></tr>
+              <tr><td>Empowerment Technologies</td><td>4</td></tr>
+              <tr><td>Entrepreneurship</td><td>4</td></tr>
+              <tr><td>HOPE 4</td><td>1</td></tr>
+              <tr><td class="subhead">Specialized Subjects</td><td class="subhead">MTGS</td></tr>
+              <tr><td>General Biology 2</td><td>4</td></tr>
+              <tr><td>General Physics 2</td><td>4</td></tr>
+              <tr><td>Capstone</td><td>4</td></tr>
+              <tr><td>Homeroom</td><td>1</td></tr>
+            </table>
+            <div class="notes">Total Hours/Week: 35<br />Total Hours/Day: 7<br />Classes End at 2:00PM</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-trigger" style="height: 200px;"></div>
+
+    <footer class="site-footer">
+        <img class="footer-bg" src="../../utils/images/footer.png" alt="" />
+        <div class="footer-icons">
+            <a href="https://www.facebook.com/pcshs.edu" aria-label="PCSHS Facebook page" target="_blank" rel="noopener noreferrer">
+                <img src="../../utils/images/fb_logo.png" alt="" />
+            </a>
+            <a href="https://www.facebook.com/sslgpasigsci" aria-label="SSLG Facebook page" target="_blank" rel="noopener noreferrer">
+                <img src="../../utils/images/sslg_logo.png" alt="" />
+            </a>
+        </div>
+    </footer>
+
+    <script>
+      const footer = document.querySelector('.site-footer');
+        const trigger = document.querySelector('#footer-trigger'); // New target
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px 200px 0px', // Footer triggers 200px before reaching the bottom
+            threshold: 0.6
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    footer.classList.add('is-active');
+                } else {
+                    footer.classList.remove('is-active');
+                }
+            });
+        }, observerOptions);
+
+        if (trigger) {
+            observer.observe(trigger);
+        }
+
+      const track = document.getElementById("jhsTrack");
+      const prev = document.querySelector(".arrow-left");
+      const next = document.querySelector(".arrow-right");
+
+      const scrollByCard = () => {
+        const card = track.querySelector(".card");
+        if (!card) return 300;
+        const style = getComputedStyle(track);
+        const gap = parseInt(style.columnGap || style.gap || "0", 10);
+        return card.offsetWidth + gap;
+      };
+
+      prev.addEventListener("click", () => {
+        track.scrollBy({ left: -scrollByCard(), behavior: "smooth" });
+      });
+
+      next.addEventListener("click", () => {
+        track.scrollBy({ left: scrollByCard(), behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>

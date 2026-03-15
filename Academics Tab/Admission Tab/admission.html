@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PCSHS Admission Updates</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap');
+
+  :root {
+    --blue-900: #0c1f3b;
+    --blue-800: #0f2a55;
+    --blue-700: #133870;
+    --blue-600: #1a4aa0;
+    --gold: #f2b600;
+    --yellow: #f6d54a;
+    --text: #0f1a2b;
+    --muted: #6b7280;
+    --border: #d7dce4;
+    --white: #ffffff;
+    --footer-icon-size: 65px;
+    --footer-icon-gap: 20px;
+    --footer-icons-right: 277px;
+    --footer-icons-offset-y: 10px;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    color: var(--text);
+    background: #ffffff;
+  }
+
+  .page { width: 100%; }
+  .content { width: 70%; margin: 0 auto; }
+
+  /*hello neswin this is where u remove the topbar so it will be the header omsim*/
+  .topbar {
+    position: relative;
+    background: linear-gradient(90deg, #0b2144 0%, #0f2a55 55%, #ffffff 100%);
+    box-shadow: 0 16px 16px rgba(0,0,0,0.25);
+    overflow: hidden;
+    width: 100%;
+}
+
+  .topbar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(13,79,166,0.35) 3px, transparent 4.5px);
+    background-size: 16px 16px;
+    mask-image: linear-gradient(90deg, transparent 0%, transparent 55%, #000 70%, #000 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 55%, #000 70%, #000 100%);
+    pointer-events: none;
+  }
+  .topbar-inner {
+    width:100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  .logo-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid #dbe5f4;
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.2);
+  }
+  .nav {
+    display: flex;
+    gap: 18px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+  }
+  .nav a { text-decoration: none; color: #dbe7ff; }
+  .nav a:hover { color: #ffffff; }
+
+  /* Hero */
+  .hero {
+  position: relative;
+  min-height: 640px;
+  background: url("sci.jpg") center/cover no-repeat;
+  border-bottom: 8px solid var(--gold);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(8,18,35,0.72), rgba(8,18,35,0.15));
+  z-index: 1;
+}
+
+/* Optional blur overlay if you want glassy effect */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(6px); /* use backdrop-filter instead of background: inherit */
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+    position: relative;
+    padding: 40px 28px 56px;
+    color: #fff;
+    text-align: center;
+  }
+  .hero-title {
+    font-size: 50px;
+    font-weight: 800;
+    color: #ffd000;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+    letter-spacing: 0.02em;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.65);
+  }
+  .hero-text {
+    margin: 0 auto 10px;
+    max-width: 900px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e8eefb;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.65);
+    text-align: justify;
+  }
+
+  /* Glass cards */
+  .retention-card,
+  .minimum-card,
+  .policy-box {
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 12px auto 0;
+    max-width: 900px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+
+  }
+
+  .retention-title,
+  .minimum-title {
+    margin: 0 0 6px;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--gold);
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .retention-text,
+  .policy-text {
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+    color: #0f1a2b;
+    text-align: left;
+  }
+
+  .policy-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 12px;
+  }
+  .policy-label { padding: 6px 0; font-size: 18px; }
+  .policy-label.strong-title {
+    color: var(--gold);
+    font-weight: 800;
+    font-style: italic;
+    text-align: left;
+  }
+
+  /* Modern section titles */
+  .section-title {
+    text-align: center;
+    font-weight: 800;
+    font-size: 40px;
+    color: var(--blue-700);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  /* Updates */
+  .updates-wrap {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 18px 20px;
+    max-width: 900px;
+    margin: 12px auto 0;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  }
+  .updates-list {
+    font-size: 15px;
+    line-height: 1.6;
+    padding-left: 18px;
+    margin: 12px auto 0;
+    max-width: 800px;
+  }
+  .updates-list li { margin-bottom: 8px; }
+  .updates-list a { color: var(--blue-600); font-weight: 600; }
+
+  /* Requirements */
+  .req-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .req-card {
+    border-radius: 16px;
+    padding: 18px 20px;
+    max-width: 900px;
+    margin: 12px auto 0;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  }
+  .req-card.blue {
+    background: linear-gradient(160deg, #0f2a55, #1a4aa0);
+    color: #fff;
+    max-width: 900px;
+    margin: 12px auto 0;
+  }
+  .req-card.yellow {
+    background: linear-gradient(160deg, #ffe28a, #f6d54a);
+    color: #0f2a55;;
+    max-width: 900px;
+    margin: 12px auto 0;
+  }
+  .req-card.blue h4 {
+    margin: 0 0 8px;
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fff;
+  }
+  .req-card.yellow h4 {
+    margin: 0 0 8px;
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #0f2a55;
+  }
+  .req-card h5 {
+    margin: 0 0 0px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f2a55;
+    margin-top: -10px;
+  }
+  .req-card .label-block {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px dashed rgba(0,0,0,.3);
+    background: rgba(255,255,255,.7);
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 10px;
+    color: #0f2a55;
+  }
+
+  /* Schedule */
+  .schedule {
+    margin-top: 18px;
+    background: linear-gradient(180deg, #0f2a55 0%, #0f2a55 40%, #ffffff 100%);
+    padding: 20px 20px 28px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px;
+  }
+  .schedule::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 3px, transparent 4.5px);
+    background-size: 16px 16px;
+    mask-image: linear-gradient(180deg, transparent 0%, transparent 40%, #000 55%, #000 100%);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, transparent 40%, #000 55%, #000 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .schedule-title {
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+    letter-spacing: 0.08em;
+    position: relative;
+    z-index: 1;
+  }
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+  }
+  .schedule-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 15px;
+    line-height: 1.4;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 900px;
+    align-self: center;
+  }
+  .schedule-card h4 {
+    margin: 0 0 6px;
+    color: var(--gold);
+    font-size: 20px;
+    text-transform: uppercase;
+    max-width: 900px;
+  }
+ .schedule-row {
+  display: grid;
+  gap: 12px;
+}
+.schedule-row.three {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.schedule-row.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 900px;
+  margin: 12px auto 0;
+
+}
+.schedule-card,
+.req-card,
+.updates-wrap,
+.policy-box,
+.retention-card,
+.minimum-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.schedule-card:hover,
+.req-card:hover,
+.updates-wrap:hover,
+.policy-box:hover,
+.retention-card:hover,
+.minimum-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.15);
+}
+  @media (max-width: 1024px) {
+    .content, .topbar-inner { width: 90%; }
+  }
+  @media (max-width: 820px) {
+    .policy-row { grid-template-columns: 1fr; }
+    .schedule-grid { grid-template-columns: 1fr; }
+  }
+  .site-footer {
+  /* Change relative to fixed */
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  flex-shrink: 0;
+  padding: 0px;
+  margin: 0px;
+  z-index: 1000; /* Ensure it stays above other content */
+
+  /* Initial state: Hidden below the bottom edge */
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* This class will be added by JavaScript when near the bottom */
+.site-footer.is-active {
+  transform: translateY(0);
+}
+
+/* Keep your existing internal styles exactly as they are */
+.site-footer .footer-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.site-footer .footer-icons {
+  position: absolute;
+  right: var(--footer-icons-right);
+  top: 50%;
+  transform: translateY(calc(-50% + var(--footer-icons-offset-y)));
+  display: flex;
+  align-items: center;
+  gap: var(--footer-icon-gap);
+  z-index: 1;
+}
+
+/* ... (rest of your icon CSS remains the same) */
+
+.site-footer .footer-icons a {
+  width: var(--footer-icon-size);
+  height: var(--footer-icon-size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ .site-footer .footer-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.site-footer .footer-icons a:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.75);
+  outline-offset: 4px;
+  border-radius: 999px;
+}
+</style>
+</head>
+<body>
+  </div>
+  <section class="hero">
+    <div class="hero-content content">
+        <h1 class="hero-title">Welcome Future PascIANS!</h1>
+        <p class="hero-text">
+          Applicants and students are advised to review the school’s policies regarding academic standing and retention.
+          Understanding these policies will help students and parents stay informed about the academic expectations required to remain enrolled in the school.
+        </p>
+
+        <div class="retention-card">
+          <h3 class="retention-title">Student Retention Policy</h3>
+          <p class="retention-text">
+            As per Sangguniang Panlunsod, Ordinance No. 28, Series of 2004, Pasig City Science High School is mandated to provide a more intensive and advanced secondary education program with emphasis on Science, Mathematics and Communication Arts and in order to safeguard the quality of education and of the graduates of this school, a Student Retention Policy is implemented for strict compliance. Hence, a minimum final grade requirement is observed.
+          </p>
+        </div>
+
+        <div class="minimum-card">
+          <h3 class="minimum-title">Minimum Grade Requirement</h3>
+          <p class="retention-text">
+            A General Weighted Average of 85% with no final grade below 80% in any subject, is the minimum grade requirement for students to be retained for the succeeding school year.
+          </p>
+        </div>
+
+        <div class="policy-box">
+          <div class="policy-row">
+            <div class="policy-label strong-title">Regular Student</div>
+            <div class="policy-text">
+                <ul type = "disk">
+              <li>A student who has satisfactorily met the minimum grade as stated above is considered a student of Regular Status and is automatically qualified for promotion to the next grade level.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="policy-box">
+          <div class="policy-row">
+            <div class="policy-label strong-title">Student on Probation</div>
+            <div class="policy-text">
+                <ul type = "disk">
+              <li>Any student who is not on probation and has no final grade below 80% but whose general weighted average is below 85% (rounded-off) will be enrolled on probation.</li>
+              <li>Any student who is not on probation and whose general weighted average is at least 85% but with a grade below 80% in just only one subject will be enrolled on probation.</li>
+              <li>A student who will be readmitted on probation in the next level for JHS and next semester for SHS will sign a Contract of Agreement together with their parents for a grade compliance requirement during card distribution.</li>
+              <li>A student on probation must meet the grade requirement of a student on a Regular Status in all subject areas to regain his/her status as a regular student. Otherwise, he/she loses the qualification for readmission.</li>
+              <li>A student on probation must attend the scheduled quarterly individual/group coaching sessions.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="policy-box">
+          <div class="policy-row">
+            <div class="policy-label strong-title">Student Not Qualified for Readmission</div>
+            <div class="policy-text">
+            <ul type = "disk">
+              <li> Any student who has received a final grade below 80% in at least two (2) subjects.</li>
+              <li>Any student who has received a final failing grade in any subject.</li>
+              <li>Any student who is enrolled on a probationary status and who is not able to regain his/her qualification for a regular student at the end of the school year.</li>
+              </ul>
+              <b>*Note: Conditions mentioned above are applied per semester for SHS students.</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+<div class="content">
+<section class="section">
+  <div class="section-title" id="section-title">2026-2027 Admission Updates</div>
+  <div class="updates-wrap">
+    <ol class="updates-list">
+      <li>Information on Admission Process and Selection (Grade 7): <a href="https://bit.ly/AdmissionProcessSelectionG7">https://bit.ly/AdmissionProcessSelectionG7</a></li>
+      <li>Information on Admission Process and Selection (Grade 11-Internal and External): <a href="https://bit.ly/AdmissionProcessSelectionG11">https://bit.ly/AdmissionProcessSelectionG11</a></li>
+      <li>Frequently Asked Questions on Unified Science High School Admissions for Legislated and Regional Science High Schools in NCR: <a href="https://www.facebook.com/share/p/18HGVhFZrj/">https://www.facebook.com/share/p/18HGVhFZrj/</a></li>
+      <li>Pasig City Science High School Admission for Incoming Grade 7 and Grade 11: <a href="https://www.facebook.com/share/p/1GddpCUkvu/">https://www.facebook.com/share/p/1GddpCUkvu/</a></li>
+      <li>DepEd Regional Memorandum No. 045, s. 2026: <a href="https://bit.ly/RegionalUnifiedAdmission">https://bit.ly/RegionalUnifiedAdmission</a></li>
+      <li>Regional Memorandum 051, s. 2026 entitled RM-No.-051-s.-2026-Addendum-to-the-Regional-Unified-Admission-Guidelines-for-Legislated-and-Regional-Science-High-Schools-for-SY-2026-2027-Onwards: <a href="https://bit.ly/AddendumToTheRegionalUnifiedAdmission">https://bit.ly/AddendumToTheRegionalUnifiedAdmission</a></li>
+      <li>List of qualified applicants for incoming Grade 7 who will join the USHAT orientation on February 28, 2026 is now available through the following links:</li>
+      <ul type= "disk"> 
+      <li>Batch 1: <a href="https://bit.ly/Batch1USHATOrientation">https://bit.ly/Batch1USHATOrientation</a></li>
+      <li>Batch 2: <a href="https://bit.ly/Batch2USHATOrientation">https://bit.ly/Batch2USHATOrientation</a></li>
+      </ul>
+      <li>List of qualified applicants for incoming G11: <a href="https://bit.ly/G11QualifiedExaminees2627">https://bit.ly/G11QualifiedExaminees2627</a></li>
+      <li>Unified Science High School Admission Test (USHAT) Room Assignments: <a href="https://www.facebook.com/share/p/1AhXCrbsns/">https://www.facebook.com/share/p/1AhXCrbsns/</a></li>
+      <ul type= "disk"> 
+      <li>Batch 1 (AM): <a href="https://drive.google.com/file/d/1KH33RZClCR7WbkaqDAEyIcRq1JhKIafG/view?usp=drivesdk">https://drive.google.com/file/d/1KH33RZClCR7WbkaqDAEyIcRq1JhKIafG/view?usp=drivesdk</a></li>
+      <li>Batch 2 (PM): <a href="https://drive.google.com/file/d/1P3cZi4BT3dMy8Y1ujO68KXe-01wfQP2B/view?usp=drivesdk">https://drive.google.com/file/d/1P3cZi4BT3dMy8Y1ujO68KXe-01wfQP2B/view?usp=drivesdk</a></li>
+    </ul>
+    </ol>
+  </div>
+</section>
+
+<section class="section requirements">
+  <div class="section-title">Requirements</div>
+  <div class="req-grid">
+    <div class="req-card blue">
+      <h4><i>Grade 7</i></h4>
+      <ol class="req-list">
+        <li>Duly accomplished Application Form Grade 7: <a href="https://bit.ly/ApplicationFormGr7" style="color:#fff;">https://bit.ly/ApplicationFormGr7</a></li>
+        <li>Original and photocopy of Grade 5 and Grade 6 Report Cards showing compliance with the following grade requirements:</li>
+        <ul type = disk>
+        <li>Grade 5 - a final grade of at least 85% in English, Mathematics, and Science, and 83% in all other learning areas; and</li>
+        <li>Grade 6 - a grade of at least 85% in English, Mathematics, and Science for the first and second quarters, and 83% in all other learning areas.</li>
+        </ul>
+        <b>Note: For schools using letter or descriptive grading systems, a certification of numerical equivalents must be provided.</b>
+        <li>Original and photocopy of PSA Birth Certificate</li>
+        <li>Two (2) recent 2x2 ID photos with a white background name tag: (FAMILY NAME, FIRST NAME, MIDDLE INITIAL)</li>
+          <div class="label-block">
+            <dl>
+            <dt>ALL REQUIREMENTS MUST BE INSERTED IN A LONG BROWN ENVELOPE LABELED AS SAMPLE BELOW:</dt>
+            <dd>INCOMING GRADE 7 - PUBLIC<br></dd>
+            <dd>DELA CRUZ, JUAN SANTOS<br></dd>
+            <dd>MALE / 0912-345-6789<br></dd>
+            <dd>PASIG ELEMENTARY SCHOOL</dd>
+            </dl>
+          </div>
+        <li>For the Parent/Guardian:</li>
+        <ul type = disk>
+        <li>Proof of Residency</li>
+        </ul>
+        <dl>
+        <dt><b>Note: Proof of residency is no longer limited to Voter’s Certification. Applicants may now submit a photocopy of ANY ONE of the following:</b></dt>
+        </dl>
+        <ol type = i>
+        <li>Valid ID with residential address<br></li>
+        <li>Latest Voter’s Certification<br></li>
+        <li>Latest Utility Billing Statement (under parent/guardian’s name)<br></li>
+        <li>Latest Real Property Tax Receipt</li>
+        </ol>        
+        <li>For guardian, submit notarized Affidavit of Guardianship</li>
+      </ol>
+    </div>
+
+    <div class="req-card yellow">
+      <h4><i>Grade 11</i></h4>
+      <h5><i>(External Applicants)</h5></i>
+      <ol class="req-list">
+        <li>Duly accomplished Application Form Grade 11: <a href="https://bit.ly/Gr11ApplicationForm">https://bit.ly/Gr11ApplicationForm</a></li>
+        <li>Original and photocopy of Grade 9 and Grade 10 Report Cards showing compliance with the following grade requirements:</li>
+        <ul type = disk>
+        <li>Grade 9 - final grade of at least 85% in English, Mathematics and Science, and 83% in all the other learning areas; and</li>
+        <li>Grade 10 - a grade of at least 85% for the first and second quarters in English, Mathematics, and Science, and 83% in all the other learning areas.</li>
+        </ul>
+        <b>Note: For schools using letter or descriptive grading systems, a certification of numerical equivalents must be provided.</b>
+        <li>Original and photocopy of PSA Birth Certificate</li>
+        <li>Two (2) recent 2x2 ID photos with white background and name tag: (FAMILY NAME, FIRST NAME, MIDDLE INITIAL)</li>    
+          <div class="label-block">
+            <dl>
+            <dt>ALL REQUIREMENTS MUST BE INSERTED IN A LONG BROWN ENVELOPE LABELED AS SAMPLE BELOW:</dt>
+            <dd>INCOMING GRADE 11 - PUBLIC<br></dd>
+            <dd>DELA CRUZ, JUAN SANTOS<br></dd>
+            <dd>MALE / 0912-345-6789<br></dd>
+            <dd>RIZAL HIGH SCHOOL</dd>
+            </dl>
+          </div>
+        <li>For the Parent/Guardian:</li>
+        <ul type = disk>
+        <li>Proof of Residency</li>
+        </ul>
+        <b>Note: Proof of residency is no longer limited to Voter’s Certification. Applicants may now submit a photocopy of ANY ONE of the following:<br></b>
+          <ol type = i>
+        <li>Valid ID with residential address<br></li>
+        <li>Latest Voter’s Certification<br></li>
+        <li>Latest Utility Billing Statement (under parent/guardian’s name)<br></li>
+        <li>Latest Real Property Tax Receipt</li>
+        </ol>  
+        </li>
+        <li>For guardian, submit notarized Affidavit of Guardianship</li>
+      </ol>
+    </div>
+
+    <div class="req-card yellow">
+      <h4><i>Grade 11</i></h4>
+      <h5><i><b>(Internal Applicants)</b></i></h5>
+      <ol class="req-list">
+        <li>Duly accomplished Application Form Grade 11: <a href="https://bit.ly/Gr11ApplicationForm">https://bit.ly/Gr11ApplicationForm</a></li>
+        <li>Original and photocopy of Grade 10 Report Cards showing compliance with the grade requirements:</li>
+        <ul type = disk>
+        <li>Quarterly Grades in Math, Science and English should be 85 or above</li>
+        <li>No Quarterly Grade below 80 in other subjects</li>
+        <li>No Final Grade of below 83 in other subjects</li>
+        <li>General Weighted Average (GWA) should be 85 or above</li>
+        </ul>
+        <li>Two (2) recent 2x2 ID photos with white background and name tag: (FAMILY NAME, FIRST NAME, MIDDLE INITIAL)</li>
+          <div class="label-block">
+            <dl>
+            <dt>ALL REQUIREMENTS MUST BE INSERTED IN A LONG BROWN ENVELOPE LABELED AS SAMPLE BELOW:</dt>
+            <dd>INCOMING GRADE 11 - PUBLIC<br></dd>
+            <dd>DELA CRUZ, JUAN SANTOS<br></dd>
+            <dd>MALE / 0912-345-6789<br></dd>
+            <dd>RIZAL HIGH SCHOOL</dd>
+            </dl>
+          </div>
+        <li>For the Guardian:</li>
+        <ul type = disk>
+        <li>For guardian, submit notarized Affidavit of Guardianship</li>
+        </ul>
+      </ol>
+    </div>
+  </div>
+</section>
+</div>
+<section class="schedule">
+  <div class="schedule-title">Schedule</div>
+
+  <div class="schedule-row three">
+    <div class="schedule-card">
+      <h4>Application Period</h4>
+      January 26, 2026 -<br>
+      February 20, 2026
+    </div>
+    <div class="schedule-card">
+      <h4>Release of Qualified List</h4>
+      February 26, 2026
+    </div>
+    <div class="schedule-card">
+      <h4>Orientation of Incoming Grade 7 Parents/Guardians</h4>
+      February 28, 2026 at PCSHS GYM<br>
+      Batch 1: 7:00 AM – 9:00 AM<br>
+      Batch 2: 10:00 AM – 12:00 PM
+    </div>
+  </div>
+
+  <div class="schedule-row two">
+    <div class="schedule-card">
+      <h4>Unified Science High School Admission Test (USHAT)</h4>
+      March 7, 2026<br>
+      Batch 1: 8:00 AM – 12:00 PM<br>
+      Batch 2: 1:00 PM – 5:00 PM
+    </div>
+    <div class="schedule-card">
+      <h4>Qualifying Examination for Incoming Grade 11</h4>
+      April 8, 2026
+    </div>
+  </div>
+</section>
+</div>
+
+<div id="footer-trigger" style="height: 225px;"></div>
+
+<footer class="site-footer">
+        <img class="footer-bg" src="../../utils/images/footer.png" alt="" />
+        <div class="footer-icons">
+            <a href="https://www.facebook.com/pcshs.edu" aria-label="PCSHS Facebook page" target="_blank" rel="noopener noreferrer">
+                <img src="../../utils/images/fb_logo.png" alt="" />
+            </a>
+            <a href="https://www.facebook.com/sslgpasigsci" aria-label="SSLG Facebook page" target="_blank" rel="noopener noreferrer">
+                <img src="../../utils/images/sslg_logo.png" alt="" />
+            </a>
+        </div>
+    </footer>
+<script>
+        const footer = document.querySelector('.site-footer');
+        const trigger = document.querySelector('#footer-trigger'); // New target
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px 200px 0px', // Footer triggers 200px before reaching the bottom
+            threshold: 0.6
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    footer.classList.add('is-active');
+                } else {
+                    footer.classList.remove('is-active');
+                }
+            });
+        }, observerOptions);
+
+        if (trigger) {
+            observer.observe(trigger);
+        }
+</script>
+
+</body>
+</html>
