@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCSHS Organization Tab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="top">
+    <section class="hero" id="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-inner">
+        <p class="eyebrow">S.Y. 2025-2026</p>
+        <h1>The Organizations of Pasig City Science High School</h1>
+        <p class="hero-subtitle">Student Leadership, Academic Clubs, Campus Groups, and Affiliated Organizations</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#co-curricular">Browse Organizations</a>
+          <a class="btn btn-secondary" href="#footer-trigger">Jump to Footer</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel sslg-panel" id="sslg">
+      <div class="section-heading center">
+        <div class="sslg-intro">
+          <img class="section-seal" src="../utils/images/sslg_logo.png" alt="SSLG logo">
+          <div class="sslg-copy">
+          <p class="eyebrow">The Supreme Secondary Learner Government</p>
+          <h2>The Supreme Secondary Learner Government (SSLG)</h2>
+          <p class="section-quote">The highest governing body of the student learners, dedicated to representing the student voice, spearheading school-wide initiatives, and fostering a culture of servant leadership.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hierarchy-grid">
+        <article class="hierarchy-card">
+          <h3>Core Officers</h3>
+          <ul>
+            <li><span>President</span><strong>Mayumi Mykaela M. Carilo</strong></li>
+            <li><span>Vice President</span><strong>Kyzel Anne M. Lovendino</strong></li>
+            <li><span>Secretary</span><strong>Rienne Jeist A. De Leon</strong></li>
+            <li><span>Treasurer</span><strong>Ysabelle N. Panaligan</strong></li>
+            <li><span>Auditor</span><strong>Ana Kamila R. Zaragoza</strong></li>
+            <li><span>Public Information Officer</span><strong>Fatima Mae F. Benabese</strong></li>
+            <li><span>Protocol Officer</span><strong>Ingrid Faye Q. Sarmiento</strong></li>
+          </ul>
+        </article>
+
+        <article class="hierarchy-card">
+          <h3>Batch Representatives</h3>
+          <ul>
+            <li><span>Grade 12 Representatives</span><strong>Ronald B. Marasigan Jr.<br>Kirsten Charlene Q. Soriano</strong></li>
+            <li><span>Grade 11 Representatives</span><strong>Joel B. Arellano Jr.<br>Edwil Jay M. Pedernal</strong></li>
+            <li><span>Grade 10 Representatives</span><strong>Steven Jhudiel N. Mesalucha<br>Janiah Francheska R. Ruiz</strong></li>
+            <li><span>Grade 9 Representatives</span><strong>Yuna Carmela M. Dean<br>Haylie Jade C. Florida</strong></li>
+            <li><span>Grade 8 Representatives</span><strong>Katelyn Michelle G. Dizon<br>Red Alexa A. Saldua</strong></li>
+          </ul>
+        </article>
+
+        <article class="hierarchy-card adviser-card">
+          <h3>SSLG Adviser</h3>
+          <p class="adviser-name">Ms. Villa-Michelle P. De Vera</p>
+          <p>Faculty adviser supporting SSLG leadership, representation, and school-wide initiatives.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="org-section theme-blue" id="co-curricular">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Category 01</p>
+          <h2>Co-Curricular / Academic Organizations</h2>
+        </div>
+        <div class="section-tools">
+          <span class="section-note">Use the arrows to see more organizations.</span>
+          <div class="nav-buttons">
+            <button class="nav-btn" type="button" data-carousel-target="co-curricular-track" data-direction="prev" aria-label="Show previous academic organizations">&#10094;</button>
+            <button class="nav-btn" type="button" data-carousel-target="co-curricular-track" data-direction="next" aria-label="Show next academic organizations">&#10095;</button>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-shell">
+        <div class="org-track" id="co-curricular-track" data-section="coCurricular"></div>
+      </div>
+    </section>
+
+    <section class="org-section theme-pink" id="extra-curricular">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Category 02</p>
+          <h2>Extra-Curricular / Non-Academic Organizations</h2>
+        </div>
+        <div class="section-tools">
+          <span class="section-note">Click next to continue browsing.</span>
+          <div class="nav-buttons">
+            <button class="nav-btn" type="button" data-carousel-target="extra-curricular-track" data-direction="prev" aria-label="Show previous non-academic organizations">&#10094;</button>
+            <button class="nav-btn" type="button" data-carousel-target="extra-curricular-track" data-direction="next" aria-label="Show next non-academic organizations">&#10095;</button>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-shell">
+        <div class="org-track" id="extra-curricular-track" data-section="extraCurricular"></div>
+      </div>
+    </section>
+
+    <section class="org-section theme-yellow" id="sslg-affiliated">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Category 03</p>
+          <h2>SSLG-Affiliated Organizations</h2>
+        </div>
+        <div class="section-tools">
+          <span class="section-note"></span>
+          <div class="nav-buttons">
+            <button class="nav-btn" type="button" data-carousel-target="sslg-affiliated-track" data-direction="prev" aria-label="Show previous SSLG-affiliated organizations">&#10094;</button>
+            <button class="nav-btn" type="button" data-carousel-target="sslg-affiliated-track" data-direction="next" aria-label="Show next SSLG-affiliated organizations">&#10095;</button>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-shell">
+        <div class="org-track" id="sslg-affiliated-track" data-section="sslgAffiliated"></div>
+      </div>
+    </section>
+
+    <section class="org-section theme-gray" >
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Category 04</p>
+          <h2>Other Organizations</h2>
+        </div>
+        <div class="section-tools">
+          <span class="section-note"></span>
+          <div class="nav-buttons" id="footer">
+            <button class="nav-btn" type="button" data-carousel-target="other-organizations-track" data-direction="prev" aria-label="Show previous other organizations">&#10094;</button>
+            <button class="nav-btn" type="button" data-carousel-target="other-organizations-track" data-direction="next" aria-label="Show next other organizations">&#10095;</button>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-shell" id="other-organizations">
+        <div class="org-track centered-track" id="other-organizations-track" data-section="otherOrganizations"></div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="footer-trigger" style="height: 250px;"></div>
+
+    <footer class="site-footer">
+        <img class="footer-bg" src="../utils/images/footer.png" alt="" />
+        <div class="footer-icons">
+            <a href="https://www.facebook.com/pcshs.edu" aria-label="PCSHS Facebook page" target="_blank" rel="noopener noreferrer">
+                <img src="../utils/images/fb_logo.png" alt="" />
+            </a>
+            <a href="https://www.facebook.com/sslgpasigsci" aria-label="SSLG Facebook page" target="_blank" rel="noopener noreferrer">
+                <img src="../utils/images/sslg_logo.png" alt="" />
+            </a>
+        </div>
+    </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
