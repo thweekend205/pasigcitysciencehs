@@ -201,7 +201,7 @@ const organizationData = {
       officers: [
         ["President", "Rhian Shaira Inventor"],
         ["Vice President", "Alberto Juson"],
-        ["Secretary", "Ira Jamilla Dela Cruz"],
+        ["Secretary", "Ira Jamila Dela Cruz"],
         ["Treasurer", "Kaya Margareth Ignacio"],
         ["Auditor", "Georgean Malaylay"],
         ["P.I.O", "Dwayll Acabado"],
