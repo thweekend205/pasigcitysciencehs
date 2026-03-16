@@ -61,7 +61,7 @@ const organizationData = {
       ]
     },
     {
-      name: "Scire & Ang Poscian: PCSHS Journalism Club",
+      name: "Scire & Ang Pascian: PCSHS Journalism Club",
       logo: "../utils/images/scire_logo.png",
       link: "https://www.facebook.com/PCSHSScire",
       tag: "Journalism Club",
@@ -378,7 +378,7 @@ const organizationData = {
       ]
     },
     {
-      name: "Filming Poscian Stories (FPS)",
+      name: "Filming Pascian Stories (FPS)",
       logo: "../utils/images/fps_logo.png",
       link: "https://www.facebook.com/FPSpcshs",
       tag: "Film Team",
@@ -412,7 +412,7 @@ const organizationData = {
       logo: "../utils/images/telecast_logo.png",
       link: "https://www.facebook.com/pcshs.telecast",
       tag: "Broadcasting Team",
-      summary: "The school's broadcasting arm, responsible for delivering timely news, announcements, and multimedia content to the Poscian community.",
+      summary: "The school's broadcasting arm, responsible for delivering timely news, announcements, and multimedia content to the Pascian community.",
       officers: [
         ["President", "Edreece Neomee Desabille"],
         ["Vice President", "Naomi Hayden Bautista"],
